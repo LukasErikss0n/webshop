@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 9vw;
+    height: 21vh;
+    background-color: #00edff1c;
+    padding: 3rem 2rem;
+    box-shadow: rgb(0 0 203 / 20%) 0px 7px 29px 0px;
+    margin-left: 40px;
+}
+
+.gallary{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20vh;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.card-wrapper img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-wrapper p{
+    color: #2c528b;
+    font-size: 20px;
+}
+
