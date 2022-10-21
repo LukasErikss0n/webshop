@@ -43,7 +43,7 @@
                         echo "<img src = 'uploads/$file' alt = '$title' >";
                         echo "<div class = 'info-wrapper' >";
                         echo "<p>$title</p>";
-                        echo "<p>$price$</p>";
+                        echo "<p>$$price</p>";
                         echo "</div>";
                         echo "</div>";
 
