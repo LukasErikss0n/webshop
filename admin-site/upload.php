@@ -40,12 +40,32 @@
                     foreach ($uppload as $file => [$dsc, $title, $price]) {
                 
                         echo "<div class = 'card-wrapper' >";
-                        echo "<img src = 'uploads/$file' alt = '$title' >";
+
+                        echo "<img src = 'uploads/$file' alt = '$title' class = 'img-start-side'>";
+
+                       
+
                         echo "<div class = 'info-wrapper' >";
                         echo "<p>$title</p>";
                         echo "<p>$$price</p>";
                         echo "</div>";
                         echo "</div>";
+
+
+                        echo "<div class = 'info-side none' >";
+                        echo "<a class = 'go-back'>Go back</a>";
+                        echo "<div class = 'info-card-wrapper' >";
+                        echo "<img src = 'uploads/$file' alt = '$title' >";
+                        echo "<div class = 'product-info' >";
+                        echo "<h2>$title</h2>";
+                        echo "<p><span>Description:</span> $dsc</p>";
+                        echo "<p><span>Price:</span> $$price</p>";
+                        echo "<button>Add to cart</button>";
+                        echo "</div>";
+                        echo "</div>"; 
+                        echo "</div>";
+
+                        
 
                     }  
                 }
@@ -56,5 +76,7 @@
             }
             ?>
         </div>  
+        <script src="../product-info.js"></script>
     </body>
+
 </html>
