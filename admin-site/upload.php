@@ -55,7 +55,7 @@
                         echo "<div class = 'info-side none' >";
                         echo "<a class = 'go-back'>Go back</a>";
                         echo "<div class = 'info-card-wrapper' >";
-                        echo "<img src = 'uploads/$file' alt = '$title' >";
+                        echo "<img src = 'uploads/$file' alt = '$title' class = 'info-card-img'>";
                         echo "<div class = 'product-info' >";
                         echo "<h2>$title</h2>";
                         echo "<p><span>Description:</span> $dsc</p>";
@@ -74,6 +74,8 @@
             }else{
                 echo "error";
             }
+
+            $con->close();
             ?>
         </div>  
         <script src="../product-info.js"></script>

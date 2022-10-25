@@ -1,15 +1,28 @@
-let productImg = document.getElementsByClassName(".img-start-side");
+let productImgs = document.getElementsByClassName("img-start-side");
 let infoSide = document.getElementsByClassName(".info-side");
-let link = document.getElementsByClassName(".go-back");
+let link = document.getElementsByClassName(".info-side");
 
 
-console.log(productImg);
+console.log(productImgs);
+
+for (let index = 0; index < productImgs.length; index++) {
+  const element = productImgs[index];
+  element.addEventListener("click", function(event) {
+    event.target.parentElement.nextElementSibling.closest(".info-side").style.display = "flex";
+    //alert("Klickade på bilden")
+  })
+  
+}
 
 
-document.body.onclick = function (event) {
-    if (event.target.classList.contains("img-start-side")) {
-        event.target.parentElement.nextElementSibling.closest(".info-side").style.display = "flex";
-      //fixa så att man kan gå ut från produkten 
+for (let index = 0; index < link.length; index++) {
+  const element = link[index];
+
+  element,addEventListener("click", function(event){
+    if(event.target.chiledElement(".info-side")){
+      
+      console.log("klickad")
     }
-
+  })
+  
 }
