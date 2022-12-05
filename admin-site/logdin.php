@@ -10,7 +10,7 @@
 <body>
     <div class="choose-wrapper">
         <div class="options">
-            <a href="upload.php" class = "log-out" >Your gallary</a>
+            <a href="upload.php" class = "log-out" >Gallary</a>
             <a href="loggout.php" class = "log-out">Log out</a>
         </div>
         <form action="file-upload.php" method="POST" enctype="multipart/form-data" class = "product-form">

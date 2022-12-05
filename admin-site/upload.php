@@ -21,7 +21,8 @@
 
             if (isset($_SESSION['user_id'])) {
                 $sesion = $_SESSION['user_id']; 
-                $grab_data = "SELECT user_id, file_name, description, title, price  from upload WHERE user_id=$sesion";
+                $grab_data = "SELECT user_id, file_name, description, title, price  from upload ";
+                //WHERE user_id=$sesion"
                 $result = $con->query($grab_data);
 
                 $uppload = [];
@@ -50,7 +51,7 @@
                         echo "<p>$$price</p>";
                         echo "</div>";
                         echo "</div>";
-
+                        //input type = 'hidden' name= 'product-id' value= '$id'
 
                         echo "<div class = 'info-side none' >";
                         echo "<a class = 'go-back'>Go back</a>";
