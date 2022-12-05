@@ -12,6 +12,7 @@
     <body>
         <a href="logdin.php" class="go-back margin-top" >Upload</a>
 
+
         <div class="gallary">
             <?php
 
@@ -25,6 +26,8 @@
                 //WHERE user_id=$sesion"
                 $result = $con->query($grab_data);
 
+                //echo "<button id='btn'>Submit</button>";
+
                 $uppload = [];
                 if (mysqli_num_rows($result) > 0) {
                 while ($obj = mysqli_fetch_assoc($result)) {
@@ -36,22 +39,19 @@
                     $price = $obj['price'];
             
 
-                    $uppload = [$fileName => [$dsc, $title, $price]];
+                    $uppload = [$fileName => [$dsc, $title, $price, $id]];
                     
-                    foreach ($uppload as $file => [$dsc, $title, $price]) {
-                
+                    foreach ($uppload as $file => [$dsc, $title, $price, $id]) {
                         echo "<div class = 'card-wrapper' >";
-
+                        echo "<input type='checkbox' name='del/status' class='checkbox' value='$id'>";
+                        //echo "<input type = 'hidden' name= 'product-id' value= '$id'>";
                         echo "<img src = 'uploads/$file' alt = '$title' class = 'img-start-side'>";
-
-                       
 
                         echo "<div class = 'info-wrapper' >";
                         echo "<p>$title</p>";
                         echo "<p>$$price</p>";
                         echo "</div>";
                         echo "</div>";
-                        //input type = 'hidden' name= 'product-id' value= '$id'
 
                         echo "<div class = 'info-side none' >";
                         echo "<a class = 'go-back'>Go back</a>";
@@ -69,16 +69,24 @@
                         
 
                     }  
+
                 }
+                
                 }
+
+
             
             }else{
                 echo "error";
             }
-
             $con->close();
             ?>
         </div>  
+        <div class="placement-button">
+        <button id='btn'type= 'submit' name="delet" formaction="status.php">Delet</button>
+        
+
+        </div>
         <script src="../product-info.js"></script>
     </body>
 

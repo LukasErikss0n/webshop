@@ -20,3 +20,26 @@ for (let index = 0; index < goBack.length; index++) {
     event.target.parentElement.style.display = "none";
   })
 }
+
+
+//const checkBox = document.getElementsByClassName("checkbox");
+const btn = document.querySelector('#btn');
+
+btn.addEventListener('click', (event) => {
+  let checkboxes = document.querySelectorAll('input[name="del/status"]:checked');
+
+  let values = [];
+  checkboxes.forEach((checkbox) => {
+      if(checkbox.checked === true){
+       values.push(checkbox.value);
+
+       JSON.stringify(values)
+       //console.log(values)
+
+      }
+      
+  });
+  alert(values);
+});    
+
+//console.log(checkBox.values)
