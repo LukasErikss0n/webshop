@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+form{
+    width: 30%;
+    height: 30vh;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+    flex-direction: column;
+    padding: 28px 21px;
+    justify-content: space-evenly;
+    margin-top: 3vh;
+}

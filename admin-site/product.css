@@ -14,13 +14,13 @@
 }
 
 
-.gallary{
+/*.gallary{
     display: flex;
     flex-direction: row;
     margin-top: 20vh;
     flex-wrap: nowrap;
     justify-content: center;
-}
+}*/
 
 .card-wrapper img{
     height: 80%;

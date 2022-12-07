@@ -14,6 +14,8 @@
 
 
         <div class="gallary">
+            <form onsubmit="return askUser()" action='status.php' method='POST' enctype='multipart/form-data' class="gallary-form">
+            <div class="styling-form">
             <?php
 
             include "server-connect.php";
@@ -22,18 +24,17 @@
 
             if (isset($_SESSION['user_id'])) {
                 $sesion = $_SESSION['user_id']; 
-                $grab_data = "SELECT user_id, file_name, description, title, price  from upload ";
+                $grab_data = "SELECT id, user_id, file_name, description, title, price  from upload ";
                 //WHERE user_id=$sesion"
                 $result = $con->query($grab_data);
 
-                //echo "<button id='btn'>Submit</button>";
 
                 $uppload = [];
                 if (mysqli_num_rows($result) > 0) {
                 while ($obj = mysqli_fetch_assoc($result)) {
 
                     $fileName = $obj['file_name'];
-                    $id = $obj['user_id'];
+                    $id = $obj['id'];
                     $dsc = $obj['description'];
                     $title = $obj['title'];
                     $price = $obj['price'];
@@ -43,8 +44,7 @@
                     
                     foreach ($uppload as $file => [$dsc, $title, $price, $id]) {
                         echo "<div class = 'card-wrapper' >";
-                        echo "<input type='checkbox' name='del/status' class='checkbox' value='$id'>";
-                        //echo "<input type = 'hidden' name= 'product-id' value= '$id'>";
+                        echo "<input type='checkbox' name='del-status[]' class='checkbox' value='$id'>";
                         echo "<img src = 'uploads/$file' alt = '$title' class = 'img-start-side'>";
 
                         echo "<div class = 'info-wrapper' >";
@@ -72,7 +72,7 @@
 
                 }
                 
-                }
+                }//get information sent to status.php when button is presed using formaction 
 
 
             
@@ -81,13 +81,13 @@
             }
             $con->close();
             ?>
+            </div>
+             <div class="placment-btn">
+                <button id='btn'type= 'submit' name="del">Delet</button>
+             </div>
+            </form>
         </div>  
-        <div class="placement-button">
-        <button id='btn'type= 'submit' name="delet" formaction="status.php">Delet</button>
-        
-
-        </div>
-        <script src="../product-info.js"></script>
+        <script src="product-info.js"></script>
     </body>
 
 </html>

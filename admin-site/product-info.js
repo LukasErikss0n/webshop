@@ -22,24 +22,10 @@ for (let index = 0; index < goBack.length; index++) {
 }
 
 
-//const checkBox = document.getElementsByClassName("checkbox");
-const btn = document.querySelector('#btn');
-
-btn.addEventListener('click', (event) => {
+function askUser() {
   let checkboxes = document.querySelectorAll('input[name="del/status"]:checked');
+  let answer = confirm("Vill du ta bort?")
+  return answer
+  
 
-  let values = [];
-  checkboxes.forEach((checkbox) => {
-      if(checkbox.checked === true){
-       values.push(checkbox.value);
-
-       JSON.stringify(values)
-       //console.log(values)
-
-      }
-      
-  });
-  alert(values);
-});    
-
-//console.log(checkBox.values)
+};    
