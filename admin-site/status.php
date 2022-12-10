@@ -4,6 +4,7 @@ session_start();
 
 
 if(isset($_POST['del'])){
+    
     $checkboxes = $_POST['del-status'];
 
     for ($i=0; $i < sizeof($checkboxes); $i++) { 
@@ -17,7 +18,6 @@ if(isset($_POST['del'])){
     $_SESSION["check"] =  $_POST['del-status'];
 
    header("location: change-status.php");
-   //header("location: upload.php");
 }
     
 if(isset($_POST['active'])){

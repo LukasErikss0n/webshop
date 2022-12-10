@@ -78,7 +78,6 @@ span{
 button{    
     color: white;
     border: none;
-   
     padding: 9px 20px;
     cursor: pointer;
     background-color: #2c528b;
@@ -99,6 +98,7 @@ button:hover{
 .info-card-img{
     width: 251px;
     height: 251px;
+    object-fit: cover;
 }
 
 .return{

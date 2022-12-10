@@ -41,11 +41,8 @@ choose.addEventListener("click", function(event){
 
 function askUser() {
 
-  let checkboxes = document.querySelectorAll('input[name="del/status"]:checked');
-    
 
   const element = document.activeElement;
-  //console.log(element)
 
   if(element.classList.contains("btn")){
     let answer = confirm("Vill du ta bort eller ändra status?")

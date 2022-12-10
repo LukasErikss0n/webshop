@@ -32,6 +32,7 @@
 .placment-btn{
     display: flex;
     justify-content: center;
+    margin-top: 10vh;
 }
 
 label{
