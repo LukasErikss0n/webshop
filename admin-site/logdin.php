@@ -22,6 +22,17 @@
             <input type="text" name = "title">
             <label for="price" class = "label-file">Price</label>
             <input type="text" name = "price">
+
+
+            <label for="" class="label-file">Status of product</label>  
+            <div>
+                <select name="status" id="status">
+                <option value="Hidden">Hidden</option>
+                <option value="Active">Active</option>
+            </select>
+
+            </div>
+
             <input type="submit" value="submit file" name="submit">
            
         </form>
