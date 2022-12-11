@@ -10,10 +10,10 @@
 <body>
     <div class="choose-wrapper">
         <div class="options">
-            <a href="../gallary-changes/upload.php" class = "log-out" >Gallary</a>
+            <a href="../gallary-changes/products-uploaded.php" class = "log-out" >Gallary</a>
             <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
         </div>
-        <form action="file-upload.php" method="POST" enctype="multipart/form-data" class = "product-form">
+        <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj file</label>
             <input type="file" name="file" class = "ghost">
             <label for="description" class = "label-file">Description</label>

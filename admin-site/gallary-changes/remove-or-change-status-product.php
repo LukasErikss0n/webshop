@@ -11,10 +11,10 @@ if(isset($_POST['confirmed-del'])){
         $remove = "DELETE FROM upload WHERE id = $round";
         $appendRemovel = mysqli_query($con, $remove);
     }
-    header("location: upload.php");
-
+    header("location: products-uploaded.php");
+    
 } else if(isset($_POST['abort'])){
-    header("location: upload.php");
+    header("location: products-uploaded.php");
 
 }else if(isset($_POST['active'])){
     $checkboxes = $_POST['del-status'];
@@ -27,8 +27,7 @@ if(isset($_POST['confirmed-del'])){
         $appendRemovel = mysqli_query($con, $change);
     }
     
-    header("location: upload.php");
-    
+    header("location: products-uploaded.php");
 
 }else if(isset($_POST['hidden'])){
     $checkboxes = $_POST['del-status'];
@@ -39,7 +38,7 @@ if(isset($_POST['confirmed-del'])){
         $change = "UPDATE upload SET status = '$value' WHERE id = '$round'";
         $appendRemovel = mysqli_query($con, $change);
     }
-    header("location: upload.php");
+    header("location: products-uploaded.php");
     
 }
 

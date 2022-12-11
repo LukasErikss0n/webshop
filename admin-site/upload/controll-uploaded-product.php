@@ -45,7 +45,7 @@ session_start();
 
                     $insertTitle = "insert into upload (user_id, file_name, description, title, price, status) values('$id', '$fileName', '$description', '$title', '$price', '$status')";
                     $appendTitle = mysqli_query($con, $insertTitle);
-                    header("location:../gallary-changes/upload.php?upploadsuccess");
+                    header("location:../gallary-changes/products-uploaded.php?upploadsuccess");
 
                 } else {
                     echo "your file is to big";

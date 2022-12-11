@@ -22,15 +22,15 @@ if(isset($_POST['submit'])){
             session_start();
             $_SESSION["username"] = $input_name;
             $_SESSION["user_id"] = $id;
-            header("location:../upload/logdin.php");
+            header("location:../upload/upload-product.php");
 
         }else{
-            header("location: ../upload/admin-login.php?error=none");
+            header("location: admin-login.php?error=none");
            // echo "no account found by the name " . $input_name. " pleas try again ";
         }
          
     } else {
-        header("location: ../upload/admin-login.php?error=none");
+        header("location: admin-login.php?error=none");
         //echo "no account found, incorrect password or username";
     }
     
