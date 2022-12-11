@@ -1,0 +1,94 @@
+
+
+/*Home sida CSS */
+.hero-imgage-home {
+  background-image: url("../hero-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.hero-text-home h1 {
+  font-size: 78px;
+  margin-bottom: 1%;
+}
+
+.hero-text-home p {
+  font-size: 20px;
+  text-shadow: -1px 1px 9px #bbbbbb;
+  background: linear-gradient(
+    156deg,
+    rgba(235, 250, 255, 1) 0%,
+    rgba(145, 188, 255, 1) 29%,
+    rgba(212, 254, 240, 1) 60%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: 1%;
+}
+.hero-text-home {
+  flex: 100%;
+  text-align: center;
+  color: white;
+  height: 88%;
+  flex-direction: column;
+}
+.hero-text-home a {
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid black;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-color: #ecfc03;
+  color: #ecfc03;
+}
+.hero-text-home a:hover {
+  background-color: #fffb0dda;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #353535;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    z-index: 8;
+    position: absolute;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
