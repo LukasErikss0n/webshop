@@ -1,5 +1,5 @@
 <?php
-include "server-connect.php";
+include "../server-connect.php";
 session_start();
  if (isset($_SESSION["username"])) {
     if(isset($_POST['submit'])){
@@ -45,7 +45,7 @@ session_start();
 
                     $insertTitle = "insert into upload (user_id, file_name, description, title, price, status) values('$id', '$fileName', '$description', '$title', '$price', '$status')";
                     $appendTitle = mysqli_query($con, $insertTitle);
-                    header("location:upload.php?upploadsuccess");
+                    header("location:../gallary-changes/upload.php?upploadsuccess");
 
                 } else {
                     echo "your file is to big";

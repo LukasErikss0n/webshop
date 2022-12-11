@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="file-css.css">
+    <link rel="stylesheet" href="../css/file-css.css">
 </head>
 <body>
     <div class="choose-wrapper">
         <div class="options">
-            <a href="upload.php" class = "log-out" >Gallary</a>
-            <a href="loggout.php" class = "log-out">Log out</a>
+            <a href="../gallary-changes/upload.php" class = "log-out" >Gallary</a>
+            <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
         </div>
         <form action="file-upload.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj file</label>

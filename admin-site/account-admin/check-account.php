@@ -1,5 +1,5 @@
 <?php
-include "server-connect.php";
+include "../server-connect.php";
 
 if(isset($_POST['submit'])){
     $input_name = $_POST['username'];
@@ -22,15 +22,15 @@ if(isset($_POST['submit'])){
             session_start();
             $_SESSION["username"] = $input_name;
             $_SESSION["user_id"] = $id;
-            header("location:logdin.php");
+            header("location:../upload/logdin.php");
 
         }else{
-            header("location: admin-login.php?error=none");
+            header("location: ../upload/admin-login.php?error=none");
            // echo "no account found by the name " . $input_name. " pleas try again ";
         }
          
     } else {
-        header("location: admin-login.php?error=none");
+        header("location: ../upload/admin-login.php?error=none");
         //echo "no account found, incorrect password or username";
     }
     

@@ -1,9 +1,8 @@
 <?php
-include "server-connect.php";
-session_start();
+include "../server-connect.php";
 
 
-if(isset($_POST['del'])){
+if(isset($_POST['confirmed-del'])){
     
     $checkboxes = $_POST['del-status'];
 
@@ -14,14 +13,12 @@ if(isset($_POST['del'])){
     }
     header("location: upload.php");
 
-}else if(isset($_POST['status'])){
-    $_SESSION["check"] =  $_POST['del-status'];
+} else if(isset($_POST['abort'])){
+    header("location: upload.php");
 
-   header("location: change-status.php");
-}
-    
-if(isset($_POST['active'])){
-    $checkboxes = $_SESSION["check"];
+}else if(isset($_POST['active'])){
+    $checkboxes = $_POST['del-status'];
+
     $value = "Active";
 
     for ($i=0; $i < sizeof($checkboxes); $i++) { 
@@ -34,7 +31,7 @@ if(isset($_POST['active'])){
     
 
 }else if(isset($_POST['hidden'])){
-    $checkboxes = $_SESSION["check"];
+    $checkboxes = $_POST['del-status'];
     $value = "Hidden";
 
     for ($i=0; $i < sizeof($checkboxes); $i++) { 

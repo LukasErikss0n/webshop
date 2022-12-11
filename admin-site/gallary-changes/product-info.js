@@ -23,7 +23,7 @@ for (let index = 0; index < goBack.length; index++) {
 
   element.addEventListener("click", function(event){
     event.target.parentElement.style.display = "none";
-    document.body.style.overflow = "scroll"
+    document.body.style.overflowY = "scroll"
     
   })
 }
@@ -31,9 +31,15 @@ for (let index = 0; index < goBack.length; index++) {
 let choose = document.getElementById("btn-status")
 
 choose.addEventListener("click", function(event){
- event.target.parentElement.nextElementSibling.style.display = "flex"
+ event.target.parentElement.nextElementSibling.nextElementSibling.style.display = "flex"
 })
 
+
+let delConfirm = document.getElementById("btn")
+
+delConfirm.addEventListener("click", function(event){
+  event.target.parentElement.nextElementSibling.style.display = "flex"
+})
 
 
 
@@ -44,12 +50,15 @@ function askUser() {
 
   const element = document.activeElement;
 
-  if(element.classList.contains("btn")){
-    let answer = confirm("Vill du ta bort eller ändra status?")
-    return answer  
-  }else{
-    
+  if(element.classList.contains("btn-confirm")){
+    //let answer = confirm("Vill du ta bort eller ändra status?")
+    //return answer
+    return true  
+  }else if(element.classList.contains("btn-abort")){
+    return true
   }
+    
+  
   //let checkboxes = document.querySelectorAll('input[name="del/status"]:checked');
   
 

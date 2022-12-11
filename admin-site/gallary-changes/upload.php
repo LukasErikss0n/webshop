@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/product.css">
 </head>
 
     <body>
-        <a href="logdin.php" id="upload-btn" class="go-back margin-top" >Upload</a>
+        <a href="../upload/logdin.php" id="upload-btn" class="go-back margin-top" >Upload</a>
 
 
         <div class="gallary">
@@ -18,7 +18,7 @@
             <div class="styling-form">
             <?php
 
-            include "server-connect.php";
+            include "../server-connect.php";
             session_start();
 
 
@@ -47,7 +47,7 @@
                         echo "<div class = 'card-wrapper' >";
                         echo "<input type='checkbox' name='del-status[]' class='checkbox' value='$id'>";
                         echo "<p class = '$status status'>$status</p>";
-                        echo "<img src = 'uploads/$file' alt = '$title' class = 'img-start-side'>";
+                        echo "<img src = '../uploads/$file' alt = '$title' class = 'img-start-side'>";
 
                         echo "<div class = 'info-wrapper' >";
                         echo "<p>$title</p>";
@@ -58,7 +58,7 @@
                         echo "<div class = 'info-side none' >";
                         echo "<a class = 'go-back return'>Go back</a>";
                         echo "<div class = 'info-card-wrapper' >";
-                        echo "<img src = 'uploads/$file' alt = '$title' class = 'info-card-img'>";
+                        echo "<img src = '../uploads/$file' alt = '$title' class = 'info-card-img'>";
                         echo "<div class = 'product-info' >";
                         echo "<h2>$title</h2>";
                         echo "<p> $$price</p>";
@@ -84,17 +84,19 @@
             ?>
             </div>
              <div class="placment-btn">
-                <button id='btn' class="btn" type= 'submit' name="del">Delet</button>
-                <button id='btn-status' type="" name="status">Change status</button>
+                <a id='btn' class="btn">Delet</a>
+                <a id='btn-status' class="btn" >Change status</a>
              </div>
-            <!-- <div id= "btn-activ-hidden">
-                <form action="status.php" method="POST" enctype="multipart/form-data">
-                    <button  type="submit" name="active">Active</button>
-                    <button type="submit" name = "hidden" >Hidden</button>
-                </form>    
-             </div>-->
+             <div id ="btn-confirmation">
+                <button class="Active" type="submit" name="confirmed-del" class="btn-confirm">Confirm</button>
+                <button class="Hidden" type="submit" name ="abort" class="btn-abort" >Abort</button>
+             </div>
+             <div id= "btn-activ-hidden">
+                <button class="Active" type="submit" name="active">Active</button>
+                <button class = "Hidden"type="submit" name = "hidden" >Hidden</button>
+             </div>
             </form>
-           
+           <!--gör samma sak för del, med en a för sedan fråga om det är säkra -->
         </div>  
         <script src="product-info.js"></script>
     </body>
