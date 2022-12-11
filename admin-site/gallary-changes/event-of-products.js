@@ -1,6 +1,4 @@
 let productImgs = document.getElementsByClassName("img-start-side");
-let infoSide = document.getElementsByClassName(".info-side");
-let link = document.getElementsByClassName(".info-side");
 let goBack = document.getElementsByClassName("go-back");
 
 //let uploadBtn = document.getElementById("#upload-btn");
@@ -57,8 +55,6 @@ function askUser() {
   }else if(element.classList.contains("btn-abort")){
     return true
   }
-    
-  
   //let checkboxes = document.querySelectorAll('input[name="del/status"]:checked');
   
 

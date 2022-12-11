@@ -45,7 +45,7 @@
                         echo "<img src = '../admin-site/uploads/$file' alt = '$title' class = 'img-start-side'>";
 
                         echo "<div class = 'info-wrapper' >";
-                        echo "<p>$title</p>";
+                        echo "<p class = 'title'>$title</p>";
                         echo "<p>$$price</p>";
                         echo "</div>";
                         echo "</div>";

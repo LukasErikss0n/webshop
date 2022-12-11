@@ -17,8 +17,8 @@
             <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
         </div>
         <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
-            <label for="file" class ="label-file">Välj file</label>
-            <input type="file" name="file" class = "ghost">
+            <label for="file" class ="label-file">Välj bild</label>
+            <input type="file" name="file"   class = "ghost">
             <label for="description" class = "label-file">Description</label>
             <input type="text" name = "description">
             <label for="title" class = "label-file">Title</label>

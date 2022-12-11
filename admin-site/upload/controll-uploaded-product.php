@@ -10,9 +10,6 @@ session_start();
         $price = $_POST['price'];
         $status = $_POST['status'];
 
-
-
-
         $fileName = $_FILES['file']['name'];
         $fileTempName = $_FILES['file']['tmp_name'];
         $fileSize = $_FILES['file']['size'];
@@ -25,16 +22,16 @@ session_start();
         $allowed = array ('jpg', 'png');
 
 
-        $stmt = $con->prepare("SELECT id, username from account where username = ?");
-        $stmt->bind_param("s", $_SESSION['username']);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        //$stmt = $con->prepare("SELECT id, username from account where username = ?");
+        //$stmt->bind_param("s", $_SESSION['username']);
+        //$stmt->execute();
+        //$result = $stmt->get_result();
 
-        $id;
-        if (mysqli_num_rows($result) > 0) {
-            $obj = mysqli_fetch_assoc($result);
-            $id = $obj['id'];
-        }
+        //$id;
+        //if (mysqli_num_rows($result) > 0) {
+          //  $obj = mysqli_fetch_assoc($result);
+            //$id = $obj['id'];
+        //}
 
         if (in_array($fileActualExtensionLower, $allowed)) {
             if ($fileError === 0) {

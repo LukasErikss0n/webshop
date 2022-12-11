@@ -1,9 +1,19 @@
 let productImgs = document.getElementsByClassName("img-start-side");
-let infoSide = document.getElementsByClassName(".info-side");
-let link = document.getElementsByClassName(".info-side");
 let goBack = document.getElementsByClassName("go-back");
+let title = document.getElementsByClassName("title")
 
 
+
+
+for (let index = 0; index < title.length; index++) {
+  const element = title[index];
+  element.addEventListener("click", function(event) {
+    event.target.parentElement.parentElement.nextElementSibling.style.display = "flex";
+    document.body.style.overflow = "hidden"
+    
+  })
+  
+}
 
 
 for (let index = 0; index < productImgs.length; index++) {
