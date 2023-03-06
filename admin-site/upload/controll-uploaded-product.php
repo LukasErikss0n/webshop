@@ -37,7 +37,7 @@ session_start();
             if ($fileError === 0) {
                 if ($fileSize < 500000000) { //ta bort 2 nollor
 
-                    $fileDestination = 'uploads/' . $fileName;
+                    $fileDestination = '../uploads/' . $fileName;
                     move_uploaded_file($fileTempName, $fileDestination);
 
                     $insertTitle = "insert into upload (user_id, file_name, description, title, price, status) values('$id', '$fileName', '$description', '$title', '$price', '$status')";
