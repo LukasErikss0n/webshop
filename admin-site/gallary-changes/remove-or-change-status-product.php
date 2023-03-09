@@ -8,6 +8,17 @@ if(isset($_POST['confirmed-del'])){
 
     for ($i=0; $i < sizeof($checkboxes); $i++) { 
         $round = $checkboxes[$i];
+        $namToRemove = "SELECT file_name FROM Upload WHERE id = $round";
+        $result = $con->query($namToRemove);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($obj = mysqli_fetch_assoc($result)) {
+                $fileName = $obj['file_name'];
+                unlink("../uploads/".$fileName);
+                
+            }
+        }
+
         $remove = "DELETE FROM upload WHERE id = $round";
         $appendRemovel = mysqli_query($con, $remove);
     }
