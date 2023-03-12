@@ -24,8 +24,8 @@
                 if($_GET["error"] === "none"){
                  echo "<p class = 'error'>*Incorrect password or username</p>";
                 }
-                else if($_GET["error"] === "invalid"){
-                    echo "<p class = 'error'>*Invalid username or password</p>";
+                else if($_GET["error"] === "notLogdin"){
+                    echo "<p class = 'error'>*Pleas login before entering</p>";
                 }
             } 
         ?>
