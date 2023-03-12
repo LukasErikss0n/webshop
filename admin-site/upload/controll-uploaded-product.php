@@ -1,7 +1,7 @@
 <?php
 include "../server-connect.php";
 session_start();
- if (isset($_SESSION["username"])) {
+if (isset($_SESSION["username"])) {
     if(isset($_POST['submit'])){
         $file = $_FILES['file'];
 
@@ -21,21 +21,9 @@ session_start();
 
         $allowed = array ('jpg', 'png');
 
-
-        //$stmt = $con->prepare("SELECT id, username from account where username = ?");
-        //$stmt->bind_param("s", $_SESSION['username']);
-        //$stmt->execute();
-        //$result = $stmt->get_result();
-
-        //$id;
-        //if (mysqli_num_rows($result) > 0) {
-          //  $obj = mysqli_fetch_assoc($result);
-            //$id = $obj['id'];
-        //}
-
         if (in_array($fileActualExtensionLower, $allowed)) {
             if ($fileError === 0) {
-                if ($fileSize < 500000000) { //ta bort 2 nollor
+                if ($fileSize < 500000000) { 
 
                     $fileDestination = '../uploads/' . $fileName;
                     move_uploaded_file($fileTempName, $fileDestination);
@@ -45,19 +33,16 @@ session_start();
                     header("location:../gallary-changes/products-uploaded.php?upploadsuccess");
 
                 } else {
-                    echo "your file is to big";
+                    header("location:../upload/upload-product.php?error=fileToBig");
                 }
             }else {
-                echo "there was an error uploading your file";
+                header("location:../upload/upload-product.php?error=401");
             }
         }else {
-            echo "you cannot upload files of this type";
+            header("location:../upload/upload-product.php?error=typeError");
         }
 
     }
-
-
-
 
 }else{
     echo "please login before you uppload";
