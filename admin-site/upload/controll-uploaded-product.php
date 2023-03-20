@@ -25,6 +25,7 @@ if (isset($_SESSION["username"])) {
             if ($fileError === 0) {
                 if ($fileSize < 500000000) { 
 
+                
                     $fileDestination = '../uploads/' . $fileName;
                     move_uploaded_file($fileTempName, $fileDestination);
 

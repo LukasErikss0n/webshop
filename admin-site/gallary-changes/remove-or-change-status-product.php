@@ -2,15 +2,10 @@
 include "../server-connect.php";
 
 
-if(isset($_POST['update'])){
-    session_start()
-    $fileName = $_SESSION['file_name'];
-    unlink("../uploads/".$filename)
-}
+
+
 if(isset($_POST['confirmed-del'])){
 
-    
-    
     $checkboxes = $_POST['del-status'];
 
     for ($i=0; $i < sizeof($checkboxes); $i++) { 

@@ -2,9 +2,8 @@
 include "../server-connect.php";
 session_start();
 if (isset($_SESSION["username"])) {
-    if(isset($_POST['submit'])){
+    if(isset($_POST['update'])){
 
-        $idProduct = $_SESSION["change-id-product"];
          
         $file = $_FILES['file'];
 
@@ -28,23 +27,29 @@ if (isset($_SESSION["username"])) {
             if ($fileError === 0) {
                 if ($fileSize < 500000000) { 
 
-                    $getOldImgUrl = "SELECT file_name from upload WHERE id = $idProduct"
+                    $idOfAdmin = $_SESSION['user_id'];
+                    $idProduct = $_SESSION["change-id-product"];
+
+                    $getOldImgUrl = "SELECT file_name from upload WHERE id = $idProduct";
                     $result = $con->query($getOldImgUrl);
                     if (mysqli_num_rows($result) > 0) {
                         while ($obj = mysqli_fetch_assoc($result)) {
                             $imgUrl = $obj['file_name'];
-                            $_SESSION['file_name'] = $imgUrl
+                            //$_SESSION['file_name'] = $imgUrl;
+
+                            unlink("../uploads/".$imgUrl);
+
+                          
                         }
+                    }
 
-
-
-                    $idOfAdmin = $_SESSION['user_id'];
+                   
                     $fileDestination = '../uploads/' . $fileName;
                     move_uploaded_file($fileTempName, $fileDestination);
 
                     $insertTitle = "UPDATE upload SET user_id = $idOfAdmin, file_name = '$fileName', description = '$description', title = '$title', price = $price, status = '$status' WHERE id = $idProduct ";
-                    print($insertTitle);
                     $appendTitle = mysqli_query($con, $insertTitle);
+                    
                     header("location:../gallary-changes/products-uploaded.php?upploadsuccess");
 
                 } else {
