@@ -65,7 +65,7 @@ span{
     font-size: 20px;
 }
 
-button{   
+button, .btn-add-product{   
     color: black;
     border: none;
     padding: 13px 36px;
@@ -74,7 +74,7 @@ button{
     border: 2px solid;
 }
 
-button:hover{
+button:hover, .btn-add-product:hover {
     background-color: #070707;
     color: white;
 }

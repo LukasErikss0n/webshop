@@ -23,7 +23,7 @@
           <div class="hero-text-home center-item">
             <h1 class="nextmove-gradient">Nextmove</h1>
             <p>Welcome to where we fullfille dreams</p>
-            <a href="products.php">Shop now</a>
+            <a href="cart-and-products/products.php">Shop now</a>
           </div>
         </div>
       </section>

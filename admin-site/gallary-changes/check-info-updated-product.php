@@ -4,7 +4,6 @@ session_start();
 if (isset($_SESSION["username"])) {
     if(isset($_POST['update'])){
 
-         
         $file = $_FILES['file'];
 
         $description = $_POST['description'];
@@ -29,21 +28,16 @@ if (isset($_SESSION["username"])) {
 
                     $idOfAdmin = $_SESSION['user_id'];
                     $idProduct = $_SESSION["change-id-product"];
-
                     $getOldImgUrl = "SELECT file_name from upload WHERE id = $idProduct";
                     $result = $con->query($getOldImgUrl);
+
                     if (mysqli_num_rows($result) > 0) {
                         while ($obj = mysqli_fetch_assoc($result)) {
+
                             $imgUrl = $obj['file_name'];
-                            //$_SESSION['file_name'] = $imgUrl;
-
-                            unlink("../uploads/".$imgUrl);
-
-                          
+                            unlink("../uploads/".$imgUrl);                          
                         }
                     }
-
-                   
                     $fileDestination = '../uploads/' . $fileName;
                     move_uploaded_file($fileTempName, $fileDestination);
 
