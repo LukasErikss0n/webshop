@@ -155,3 +155,8 @@ button:hover{
     align-items: center;
 }
 
+
+.btn-change{
+    color: red;
+    cursor: pointer;
+}

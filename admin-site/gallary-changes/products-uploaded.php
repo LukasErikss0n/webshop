@@ -22,12 +22,10 @@ include "../check-if-loggdin.php";
             <div class="styling-form">
             <?php
             include "../server-connect.php";
-            session_start();
 
             if (isset($_SESSION['user_id'])) {
                 $sesion = $_SESSION['user_id']; 
                 $grab_data = "SELECT id, user_id, file_name, description, title, price, status  from upload ";
-                //WHERE user_id=$sesion"
                 $result = $con->query($grab_data);
 
                 $uppload = [];
@@ -48,7 +46,6 @@ include "../check-if-loggdin.php";
                         echo "<input type='checkbox' name='del-status[]' class='checkbox' value='$id'>";
                         echo "<p class = '$status status'>$status</p>";
                         echo "<img src = '../uploads/$file' alt = '$title' class = 'img-start-side'>";
-
                         echo "<div class = 'info-wrapper' >";
                         echo "<p>$title</p>";
                         echo "<p>$$price</p>";
@@ -60,6 +57,7 @@ include "../check-if-loggdin.php";
                         echo "<div class = 'info-card-wrapper' >";
                         echo "<img src = '../uploads/$file' alt = '$title' class = 'info-card-img'>";
                         echo "<div class = 'product-info' >";
+                        echo "<a href = '../gallary-changes/update-product.php?id=$id' class = 'btn-change' value = '$id'>Edit</a>";
                         echo "<h2>$title</h2>";
                         echo "<p> $$price</p>";
                         echo "<p>Tax included</p>";
