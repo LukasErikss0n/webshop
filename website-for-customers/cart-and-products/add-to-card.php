@@ -3,10 +3,12 @@
 
 
 
-    //session_start();
 
     $addToCardId = $_GET['added'];
     $img = $_GET['img'];
-    //$_SESSION["producted-added-to-card"] = $addToCardId ;
-            
+    $description = $_GET['desc'];
+    $title = $_GET['title']; 
+    $price = $_GET['price'];
+
+    
 

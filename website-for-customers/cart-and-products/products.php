@@ -58,8 +58,8 @@
                         echo "<p> $$price</p>";
                         echo "<p>Tax included</p>";
 
-                    
-                        echo "<a href = 'add-to-card.php?added='.$id.'&img='.$file.'' class = 'btn-add-product'>Add card</a>";
+                    //href måste läga till flera variabler till GET
+                        echo "<a href ='add-to-card.php?added=$id&img=$file&desc=$dsc&title=$title&price=$price' class = 'btn-add-product'>Add card</a>";
                         echo "</div>";
                         echo "</div>"; 
                         echo "</div>";
