@@ -48,7 +48,6 @@
                         echo "<p class = 'price' value = '$id'>$$price</p>";
                         echo "</div>";
                         echo "</div>";
-                        echo "</div>";
                        }
                     }  
                 } 
