@@ -41,26 +41,13 @@
                     foreach ($uppload as $file => [$dsc, $title, $price, $id, $status]) {
                        if($status == "Active" ){
                         echo "<div class = 'card-wrapper' >";
-                        echo "<img src = '../../admin-site/uploads/$file' alt = '$title' class = 'img-start-side'>";
+                        echo "<img src = '../../admin-site/uploads/$file' alt = '$title' value = '$id' class = 'img-start-side'>";
 
                         echo "<div class = 'info-wrapper' >";
-                        echo "<p class = 'title'>$title</p>";
-                        echo "<p>$$price</p>";
+                        echo "<p class = 'title' value = '$id'>$title</p>";
+                        echo "<p class = 'price' value = '$id'>$$price</p>";
                         echo "</div>";
                         echo "</div>";
-
-                        echo "<div class = 'info-side none' >";
-                        echo "<a class = 'go-back return'>Go back</a>";
-                        echo "<div class = 'info-card-wrapper' >";
-                        echo "<img src = '../../admin-site/uploads/$file' alt = '$title' class = 'info-card-img'>";
-                        echo "<div class = 'product-info' >";
-                        echo "<h2>$title</h2>";
-                        echo "<p> $$price</p>";
-                        echo "<p>Tax included</p>";
-
-                        echo "<a href ='add-to-card.php?id=$id' class = 'btn-add-product'>Add card</a>";
-                        echo "</div>";
-                        echo "</div>"; 
                         echo "</div>";
                        }
                     }  

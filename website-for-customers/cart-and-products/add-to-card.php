@@ -25,7 +25,7 @@
     }
 
 
-header("location: products.php");
+header("location: product-spec.php?value=$addToCardId");
 
     
 
