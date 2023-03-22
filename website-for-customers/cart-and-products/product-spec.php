@@ -13,7 +13,7 @@
     <?php
     include "../server-connect.php";
 
-    $IdspecOfProduckt = $_GET['value'];
+    $IdspecOfProduckt = $_GET['id'];
 
     $getMoreInfo = "SELECT id, user_id, file_name, description, title, price, status  from upload Where id = $IdspecOfProduckt ";
     $result = $con->query($getMoreInfo);
@@ -33,23 +33,29 @@
             $uppload = [$fileName => [$dsc, $title, $price, $id, $status]];
 
             foreach ($uppload as $file => [$dsc, $title, $price, $id, $status]) {
-            if($status == "Active" ){
-                echo "<div class = 'info-side'>";
-                echo "<a href = 'products.php' class = 'go-back return'>Go back</a>";
-                echo "<div class = 'info-card-wrapper' >";
-                echo "<img src = '../../admin-site/uploads/$file' alt = '$title' class = 'info-card-img'>";
-                echo "<div class = 'product-info' >";
-                echo "<h2>$title</h2>";
-                echo "<p> $$price</p>";
-                echo "<p>Tax included</p>";
+                if($status == "Active" ){
+                    echo "<div class = 'info-side'>";
+                    echo "<a href = 'products.php' class = 'go-back return'>Go back</a>";
+                    echo "<div class = 'info-card-wrapper' >";
+                    echo "<img src = '../../admin-site/uploads/$file' alt = '$title' class = 'info-card-img'>";
+                    echo "<div class = 'product-info' >";
+                    echo "<h2>$title</h2>";
+                    echo "<p> $$price</p>";
+                    echo "<p>Tax included</p>";
 
-                echo "<a href ='add-to-card.php?id=$id' class = 'btn-add-product'>Add card</a>";
-                echo "</div>";
-                echo "</div>"; 
-                echo "</div>";
+                    echo "<a href ='add-to-card.php?id=$id' class = 'btn-add-product'>Add card</a>";
+                    echo "</div>";
+                    echo "</div>"; 
+                    echo "</div>";
+
+                }
+            
             }
-            }  
+           
+         
         } 
+
+
     }
     $con->close();
     ?>

@@ -38,7 +38,7 @@ productImgs.forEach(img => {
 
 function handleClick(event) {
   const value = event.target.getAttribute('value');
-  window.location.href = "product-spec.php?value=" + value;
+  window.location.href = "product-spec.php?id=" + value;
 }
 
 
