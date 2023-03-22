@@ -23,8 +23,8 @@ include "../check-if-loggdin.php";
             <?php
             include "../server-connect.php";
 
-            if (isset($_SESSION['user_id'])) {
-                $sesion = $_SESSION['user_id']; 
+            if (isset($_SESSION["admin_id"])) {
+                $sesion = $_SESSION["admin_id"]; 
                 $grab_data = "SELECT id, user_id, file_name, description, title, price, status  from upload ";
                 $result = $con->query($grab_data);
 

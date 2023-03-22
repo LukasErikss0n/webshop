@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
 
             session_start();
             $_SESSION["username"] = $input_name;
-            $_SESSION["user_id"] = $id;
+            $_SESSION["admin_id"] = $id;
             header("location:../upload/upload-product.php");
 
         }else{

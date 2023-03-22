@@ -26,7 +26,7 @@ if (isset($_SESSION["username"])) {
             if ($fileError === 0) {
                 if ($fileSize < 500000000) { 
 
-                    $idOfAdmin = $_SESSION['user_id'];
+                    $idOfAdmin = $_SESSION["admin_id"];
                     $idProduct = $_SESSION["change-id-product"];
                     $getOldImgUrl = "SELECT file_name from upload WHERE id = $idProduct";
                     $result = $con->query($getOldImgUrl);

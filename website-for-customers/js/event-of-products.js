@@ -10,6 +10,7 @@ for (let index = 0; index < title.length; index++) {
   element.addEventListener("click", function(event) {
     event.target.parentElement.parentElement.nextElementSibling.style.display = "flex";
     document.body.style.overflow = "hidden"
+
     
   })
   
@@ -20,8 +21,7 @@ for (let index = 0; index < productImgs.length; index++) {
   const element = productImgs[index];
   element.addEventListener("click", function(event) {
     event.target.parentElement.nextElementSibling.closest(".info-side").style.display = "flex";
-    document.body.style.overflow = "hidden"
-    
+    document.body.style.overflow = "hidden"    
   })
   
 }

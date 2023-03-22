@@ -6,7 +6,7 @@
              <a href="../index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="../cart-and-products/products.php" class="nav-link">Products</a>
+                <a href="cart-and-products/products.php" class="nav-link">Products</a>
             </li>
             <li class="nav-item">
              <a href="#" class="nav-link">About</a>
