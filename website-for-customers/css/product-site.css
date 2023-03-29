@@ -35,7 +35,7 @@
 }
 
 .info-side{
-    /*display: none;*/
+    display: flex;
     position: fixed;
     width: 100%;
     height: 110%;
@@ -121,7 +121,6 @@ button:hover, .btn-add-product:hover {
 h1{
     color: #2c528b;
 }
-
 
 .img{
     margin-top: 10px;

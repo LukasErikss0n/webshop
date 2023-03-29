@@ -1,0 +1,47 @@
+table{
+    width: 100vw;
+    height: 50vh;
+    border-collapse: collapse;
+    color: white;
+}
+
+h1{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+th{
+    background-color: rgb(169 169 169 / 55%);
+    font-size: 10px;
+    height: 14px;
+    color: aliceblue;
+}
+
+
+td{
+    text-align: center;
+    background-color: rgba(188, 188, 188, 0.436);
+    height: 16px;
+    
+}
+
+tr:nth-child(odd) {
+    background-color: #aaadb1;
+}
+
+h2{
+    color: white;
+    font-size: 15px;
+}
+img{
+    width: 114px;
+}
+
+.td-img{
+    width: 20%;
+}
+
+.emty{
+    text-align: center;
+}
