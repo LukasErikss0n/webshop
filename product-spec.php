@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produkt</title>
     <?php
-    include "../favicon.php";
+    include "favicon.php";
     ?>
-    <link rel="stylesheet" href="../css/universel.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/product-site.css">
+    <link rel="stylesheet" href="css/universel.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/product-site.css">
 </head>
 <body>
     <?php
-    include "../server-connect.php";
+    include "server-connect.php";
 
     $IdspecOfProduckt = $_GET['id'];
 
@@ -40,7 +40,7 @@
                     echo "<div class = 'info-side'>";
                     echo "<a href = 'products.php' class = 'go-back return'>Go back</a>";
                     echo "<div class = 'info-card-wrapper' >";
-                    echo "<img src = '../../admin-site/uploads/$file' alt = '$title' class = 'info-card-img'>";
+                    echo "<img src = 'admin-site/uploads/$file' alt = '$title' class = 'info-card-img'>";
                     echo "<div class = 'product-info' >";
                     echo "<h2>$title</h2>";
                     echo "<p> $$price</p>";

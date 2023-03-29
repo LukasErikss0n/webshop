@@ -1,12 +1,12 @@
 <header class="header">
     <nav class="navbar">
-        <a href="../index.php" class="nav-logo nextmove-gradient">Nextmove</a>
+        <a href="index.php" class="nav-logo nextmove-gradient">Nextmove</a>
         <ul class="nav-menu">
             <li class="nav-item">
-             <a href="../index.php" class="nav-link">Home</a>
+             <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="cart-and-products/products.php" class="nav-link">Products</a>
+                <a href="products.php" class="nav-link">Products</a>
             </li>
             <li class="nav-item">
              <a href="#" class="nav-link">About</a>

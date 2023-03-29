@@ -5,16 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php 
-   include "../favicon.php";
+   include "favicon.php";
   ?>
-  <link rel="stylesheet" href="../css/universel.css">
-  <link rel="stylesheet" href="../css/cart.css">
+  <link rel="stylesheet" href="css/universel.css">
+  <link rel="stylesheet" href="css/cart.css">
   <title>Shopping cart</title>
 </head>
 <body>
 <?php
 
-include "../server-connect.php";
+include "server-connect.php";
 
 session_start();
 
@@ -63,7 +63,7 @@ if (!empty($_SESSION['cart'])) {
   echo "</tr>";
   echo "<tr>";
   foreach ($_SESSION['cart'] as $product) {
-    echo "<td class = 'td-img'><img src = '../../admin-site/uploads/$product[img_url] '  ></td>";
+    echo "<td class = 'td-img'><img src = 'admin-site/uploads/$product[img_url] '  ></td>";
     echo "<td><h2>$product[title]</h2></td>";
     echo "<td>$product[quantity]</td>";
     echo "<td>$product[price]</td>";

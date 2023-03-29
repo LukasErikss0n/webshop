@@ -1,5 +1,5 @@
 <?php
-    include "../server-connect.php";
+    include "server-connect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <?php
-    include "../favicon.php";
+    include "favicon.php";
     ?>
-    <link rel="stylesheet" href="../css/universel.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link rel="stylesheet" href="../css/product-site.css">
+    <link rel="stylesheet" href="css/universel.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/product-site.css">
 </head>
 <body>
     <?php 
-        include "../nav-menu.php";
+        include "nav-menu.php";
     ?>
     <main>
         <div class="wrapper-of-products">
@@ -41,7 +41,7 @@
                     foreach ($uppload as $file => [$dsc, $title, $price, $id, $status]) {
                        if($status == "Active" ){
                         echo "<div class = 'card-wrapper' >";
-                        echo "<img src = '../../admin-site/uploads/$file' alt = '$title' value = '$id' class = 'img-start-side'>";
+                        echo "<img src = 'admin-site/uploads/$file' alt = '$title' value = '$id' class = 'img-start-side'>";
 
                         echo "<div class = 'info-wrapper' >";
                         echo "<p class = 'title' value = '$id'>$title</p>";
@@ -54,7 +54,7 @@
             }
             $con->close();
             ?>
-             <script src="../js/event-of-products.js"></script>
+             <script src="js/event-of-products.js"></script>
         </div>
     </main>
 </body>
