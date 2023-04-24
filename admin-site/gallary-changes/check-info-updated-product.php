@@ -62,3 +62,5 @@ if (isset($_SESSION["username"])) {
 }else{
     header("location: ../account-admin/admin-login.php?error=notLogdin");
 }
+
+$con->close();

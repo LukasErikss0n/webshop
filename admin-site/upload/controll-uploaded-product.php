@@ -49,6 +49,7 @@ if (isset($_SESSION["username"])) {
     echo "please login before you uppload";
 }
 
+$con->close();
 
 
 

@@ -60,6 +60,7 @@ include "../check-if-loggdin.php";
                         echo "<p class = 'error'>*The file typ is not allowed</p>";
                     }
                 }
+                $con->close();
             ?>
             </div>
 

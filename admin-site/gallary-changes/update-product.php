@@ -34,6 +34,7 @@
                     $status = $obj['status'];
                 }
              }
+             $con->close();
                       
         ?>
         <form action="check-info-updated-product.php" method="POST" enctype="multipart/form-data" class = "product-form">

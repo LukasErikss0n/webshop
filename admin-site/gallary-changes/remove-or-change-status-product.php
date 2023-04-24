@@ -53,6 +53,7 @@ if(isset($_POST['confirmed-del'])){
     header("location: products-uploaded.php");
     
 }
+$con->close();
 
     
 

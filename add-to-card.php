@@ -79,7 +79,7 @@ if (!empty($_SESSION['cart'])) {
 }
 
 //header("location: product-spec.php?id=$product_id");
-
+$con->close();
 ?>
 </body>
 </html>
