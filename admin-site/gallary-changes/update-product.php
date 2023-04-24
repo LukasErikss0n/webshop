@@ -18,19 +18,30 @@
              session_start();
              include "../server-connect.php";
              $_SESSION["change-id-product"] = $id ;
-             $grab_data = "SELECT description from upload where id = '$id'";
+             $grab_data = "SELECT user_id, file_name, description, title, price, status  from  upload where id = '$id'";
              $result = $con->query($grab_data);
+
+             if (mysqli_num_rows($result) > 0) {
+                while ($obj = mysqli_fetch_assoc($result)) {
+
+                    $fileName = $obj['file_name'];
+                    $dsc = $obj['description'];
+                    $title = $obj['title'];
+                    $price = $obj['price'];
+                    $status = $obj['status'];
+                }
+             }
                       
         ?>
         <form action="check-info-updated-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
-            <label for="file" class ="label-file">Välj bild</label>
-            <input type="file" name="file"   class = "ghost">
+            <label for="file" class ="label-file" >Välj bild</label>
+            <input type="file" name="file"class = "ghost">
             <label for="description" class = "label-file">Description</label>
-            <input type="text" name = "description" value ="<?php echo mysqli_fetch_assoc($result)['description'];?>">
+            <input type="text" name = "description" value ="<?php echo $dsc;?>">
             <label for="title" class = "label-file">Title</label>
-            <input type="text" name = "title">
+            <input type="text" name = "title" value ="<?php echo $title;?>">
             <label for="price" class = "label-file">Price</label>
-            <input type="text" name = "price">
+            <input type="text" name = "price" value ="<?php echo $price;?>">
           
 
             <label for="" class="label-file">Status of product</label>  

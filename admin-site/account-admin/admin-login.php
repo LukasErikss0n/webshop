@@ -21,6 +21,8 @@
            <input type="password" name="password">
            <?php 
             if(isset($_GET["error"])) {
+
+                //Namn: adminviggo, lösen: lukas
                 if($_GET["error"] === "none"){
                  echo "<p class = 'error'>*Incorrect password or username</p>";
                 }

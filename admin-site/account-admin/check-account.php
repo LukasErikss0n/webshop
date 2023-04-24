@@ -17,7 +17,8 @@ if(isset($_POST['submit'])){
         $id = $obj['id'];
         $password = $obj['user_password'];
 
-        if($input_password === $password){
+
+        if(password_verify($input_password, $password)){
 
             session_start();
             $_SESSION["username"] = $input_name;
@@ -26,12 +27,10 @@ if(isset($_POST['submit'])){
 
         }else{
             header("location: admin-login.php?error=none");
-           // echo "no account found by the name " . $input_name. " pleas try again ";
         }
          
     } else {
         header("location: admin-login.php?error=none");
-        //echo "no account found, incorrect password or username";
     }
     
     $con->close();
