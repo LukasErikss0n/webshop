@@ -23,7 +23,7 @@
             <label for="file" class ="label-file">Välj bild</label>
             <input type="file" name="file"   class = "ghost">
             <label for="description" class = "label-file">Description</label>
-            <input type="text" name = "description" >
+            <input type="text" name = "description" value ="">
             <label for="title" class = "label-file">Title</label>
             <input type="text" name = "title">
             <label for="price" class = "label-file">Price</label>

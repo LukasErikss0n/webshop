@@ -19,6 +19,7 @@ include "../check-if-loggdin.php";
         <div class="options">
             <a href="../gallary-changes/products-uploaded.php" class = "log-out" >Gallary</a>
             <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
+            <a href="../account-admin/administrat.php" class = "log-out">administration</a>
         </div>
         <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj bild</label>

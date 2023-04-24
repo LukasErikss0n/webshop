@@ -17,6 +17,7 @@ if (isset($_SESSION["username"])) {
         $fileError = $_FILES['file']['error'];
         $fileType = $_FILES['file']['type'];
 
+
         $fileExtensionUpper = explode('.', $fileName);
         $fileActualExtensionLower = strtolower(end($fileExtensionUpper));
 

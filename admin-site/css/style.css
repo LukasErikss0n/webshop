@@ -97,6 +97,12 @@ h1{
     color: #ff0000;
 }
 
+.none{
+    text-align: center;
+    margin-top: 10px;
+    color: green;
+}
+
 .img{
     margin-top: 10px;
     width: 19vw;
