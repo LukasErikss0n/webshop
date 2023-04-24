@@ -1,6 +1,7 @@
 <?php
 
 include "../server-connect.php";
+include "../check-level.php";
 
 if(isset($_POST['submit'])){
     session_start();

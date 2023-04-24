@@ -25,8 +25,8 @@ include "../check-if-loggdin.php";
             $grab_data = "SELECT acces_level from  account where id = '$id'";
             $result = $con->query($grab_data);
             
-            if(mysqli_fetch_assoc($result)['acces_level']){
-                echo "<a href='../account-admin/administrat.php' class = 'log-out'>administration</a>";
+            if(mysqli_fetch_assoc($result)['acces_level'] == "Administrat"){
+                echo "<a href='../account-admin/administrat.php' class = 'log-out'>Administration</a>";
             }
             
             ?>

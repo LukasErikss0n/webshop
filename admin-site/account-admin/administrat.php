@@ -8,6 +8,7 @@
     <title>Administration</title>
     <?php
     include "../favicon.php";
+    include "../check-level.php";
     ?>
 </head>
 <body>
