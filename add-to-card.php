@@ -51,17 +51,20 @@ if (mysqli_num_rows($result) > 0) {
   
 }
 echo "<a href= 'products.php'>Go back</a>";
-echo "<h1>Shopping Cart</h1>";
+
+echo "<div class='wrapper-h1'><h1>Shopping Cart</h1></div>";
+
 if (!empty($_SESSION['cart'])) {
-  echo "<table>";
-  echo "<tr>";
-  echo "<th></th>";
-  echo "<th>Title</th>";
-  echo "<th>quantity</th>";
-  echo "<th>price</th>";
-  echo "<th></th>";
-  echo "</tr>";
-  echo "<tr>";
+   echo "<table>";
+    echo "<tr>";
+    echo "<th></th>";
+    echo "<th>Title</th>";
+    echo "<th>quantity</th>";
+    echo "<th>price</th>";
+    echo "<th></th>";
+    echo "</tr>";
+    echo "<tr>";
+
   foreach ($_SESSION['cart'] as $product) {
     echo "<td class = 'td-img'><img src = 'admin-site/uploads/$product[img_url] '  ></td>";
     echo "<td><h2>$product[title]</h2></td>";
@@ -74,9 +77,6 @@ if (!empty($_SESSION['cart'])) {
 } else {
   echo "<p class = 'emty'>Your cart is empty.</p>";
 }
-
-
-
 
 //header("location: product-spec.php?id=$product_id");
 

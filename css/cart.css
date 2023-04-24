@@ -9,6 +9,13 @@ h1{
     font-size: 30px;
     text-align: center;
     margin-top: 5vh;
+    text-align: center;
+    color: white;
+    background-color: #442dafc9;
+    padding: 2px 3px;
+    margin-bottom: 1vh;
+    width: 26vw;
+    text-align: center;
 }
 
 th{
@@ -21,13 +28,18 @@ th{
 
 td{
     text-align: center;
-    background-color: rgba(188, 188, 188, 0.436);
+    background-color: hsl(206deg 97.58% 56.65% / 18%);
     height: 16px;
     
 }
 
+.wrapper-h1{
+    display: flex;
+    justify-content: center;
+}
+
 tr:nth-child(odd) {
-    background-color: #aaadb1;
+    background-color: #4d90fe;
 }
 
 h2{
