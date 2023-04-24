@@ -4,7 +4,7 @@
 }
 
 .wrapper{
-    margin-top: 10vh;
+    margin-top: 1vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -64,19 +64,18 @@ input[type=submit]:hover {
 }
 
 .go-back{
-    padding: 10px 12px;
-    border-radius: 20px;
-    background-color: #0c0c0c;
+    padding: 7px 15px;
+    border-radius: 9px;
+    background-color: #6957c0;
     text-decoration: none;
     color: white;
     margin-top: -97vh;
     margin-left: 5vw;
-
 }
 
 .go-back:hover{
     cursor: pointer;
-    background-color: #161616a6;
+    background-color: #6857c0cc;
 }
 
 .return-wrapper{

@@ -85,7 +85,7 @@ button{
 }
 
 #btn{
-    background-color: red;
+    background-color: hsl(11deg 100% 50%);
 }
 
 .btn{
@@ -157,6 +157,9 @@ button:hover{
 
 
 .btn-change{
-    color: red;
+    color: white;
     cursor: pointer;
+    background-color: #ff0000d9;
+    padding: 2px 3px;
+    text-decoration: none;
 }

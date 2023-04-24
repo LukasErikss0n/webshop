@@ -1,9 +1,9 @@
 .label-file{
-    border-radius: 21px;
+    border-radius: 2px;
     border: none;
     margin-top: 20px;
     padding: 6px 12px;
-    background-color: #252460;
+    background-color: #6957c0;
     color: white;
     margin-bottom: 4px;
     text-align: center;
@@ -15,22 +15,15 @@
     margin-top: -43px;
 }
 
-
-.wrapper{
-    display: flex;
-    justify-content: center;
-}
-
 input[type=submit]{
     margin-left: -5px;
-    border-radius: 10px;
+    border-radius: 2px;
     border: none;
     margin-top: 20px;
     padding: 10px 12px;
-    background-color: #2c528b;
+    background-color: #24426f;
     color: white;
     margin-bottom: 4px;
-
 }
 
 input[type=submit]:hover{
@@ -44,8 +37,8 @@ input[type=submit]:hover{
 .log-out{
     text-decoration: none;
     padding: 10px 12px;
-    border-radius: 20px;
-    background-color: #2c528b;
+    border-radius: 2px;
+    background-color: #6957c0;
     color: white;
     margin-top: 5vh;
     margin-left: 30vw;
@@ -64,8 +57,8 @@ input[type=submit]:hover{
 .btn-styling-administration{
     text-decoration: none;
     padding: 10px 12px;
-    border-radius: 20px;
-    background-color: #2c528b;
+    border-radius: 2px;
+    background-color: #6957c0;
     color: white;
     text-align: center;
 }
@@ -101,4 +94,44 @@ input[type=submit]:hover{
     width: 100%;
     padding: 3px 10px;
     text-align: center;
+}
+
+.wrapper-sections{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 3vh;
+    background-color: #4d90fe17;
+}
+
+.card-user{
+    width: 21vw;
+}
+
+.card-user h3{
+    background-color: #4d90fe;
+    padding: 3px 10px;
+    color: white;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.card-user p{
+    text-align: center;
+    background-color: hsl(206deg 100% 73.3% / 29%);
+    padding: 2px 4px;
+    margin-top: 0px;
+    height: 4vh;
+    color: #090909;
+}
+
+.card-wrapper h2{
+    text-align: center;
+    color: white;
+    background-color: #442dafc9;
+    padding: 2px 3px;
 }

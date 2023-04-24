@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/file-css.css">
     <title>creat account/admin</title>
+    <?php
+    include "../favicon.php";
+    ?>
 </head>
 <body>
     <div class = "go-back-wrapper">
