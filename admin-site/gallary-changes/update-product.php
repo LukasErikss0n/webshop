@@ -16,14 +16,17 @@
         <?php
              $id = $_GET['id'];
              session_start();
+             include "../server-connect.php";
              $_SESSION["change-id-product"] = $id ;
+             $grab_data = "SELECT description from upload where id = '$id'";
+             $result = $con->query($grab_data);
                       
         ?>
         <form action="check-info-updated-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj bild</label>
             <input type="file" name="file"   class = "ghost">
             <label for="description" class = "label-file">Description</label>
-            <input type="text" name = "description" value ="">
+            <input type="text" name = "description" value ="<?php echo mysqli_fetch_assoc($result)['description'];?>">
             <label for="title" class = "label-file">Title</label>
             <input type="text" name = "title">
             <label for="price" class = "label-file">Price</label>
