@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +21,16 @@
             <input type="text" name="creatusername" >
            <label for="creatpassword">Password</label>
            <input type="password" name="creatpassword" >
+
+           <label for="" >Administration level</label>  
+            <div>
+                <select name="administration-level" id="status">
+
+                <option value="Administrat">Administrat</option>
+                <option value="standard">standard</option>
+
+                </select>
+            </div>
            <?php 
             if(isset($_GET["error"])) {
                 if($_GET["error"] === "empty"){

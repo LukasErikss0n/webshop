@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
     $input_password = $_POST['password'];
     
 
-    $stmt = $con->prepare("SELECT id, username, user_password from account where username = ?");
+    $stmt = $con->prepare("SELECT id, username, user_password, acces_level from account where username = ?");
     $stmt->bind_param("s", $input_name);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -16,6 +16,7 @@ if(isset($_POST['submit'])){
         $name = $obj['username'];
         $id = $obj['id'];
         $password = $obj['user_password'];
+        $acces_level = $obj['acces_level'];
 
 
         if(password_verify($input_password, $password)){
@@ -23,6 +24,7 @@ if(isset($_POST['submit'])){
             session_start();
             $_SESSION["username"] = $input_name;
             $_SESSION["admin_id"] = $id;
+            $_SESSION["acces_level"] = $acces_level;
             header("location:../upload/upload-product.php");
 
         }else{
