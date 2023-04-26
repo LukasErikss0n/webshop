@@ -106,6 +106,7 @@ input[type=submit]:hover{
     flex-direction: column;
     padding: 2vw 3vh;
     background-color: #4d90fe17;
+    width: 23vw;
 }
 
 .card-user{
@@ -142,4 +143,9 @@ input[type=submit]:hover{
 
 .remove-form{
    text-align: center;
+}
+
+.update-form{
+    display: flex;
+    flex-direction: column;
 }

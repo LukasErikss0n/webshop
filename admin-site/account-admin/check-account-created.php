@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
         $creat_username = $_POST['creatusername'];
         $creat_password = $_POST['creatpassword'];
         $administration_level = $_POST['administration-level'];
-        echo $creat_password;
+        //echo $creat_password;
     
         if($creat_username !== "" && $creat_password !== "") {
             $stmt = $con->prepare("SELECT id, username, user_password from account where username = ?");

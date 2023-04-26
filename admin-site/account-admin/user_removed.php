@@ -1,9 +1,8 @@
 <?php
 include "../server-connect.php";
-if(isset($_POST['submit'])){
+if(isset($_POST['remove-submit'])){
     session_start();
     $level = $_SESSION["acces_level"];
-    $admin_removing_user_id = $_SESSION["admin_id"];
     if($level == "administrat"){
         $user_remove_id = $_POST['id'];
 
@@ -13,5 +12,5 @@ if(isset($_POST['submit'])){
 
     $con->close();
 
-    header("location: remove_admin.php?userDeleted");
+    //header("location: remove-admin-or-update.php?userDeleted");
 }
