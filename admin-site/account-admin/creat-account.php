@@ -1,4 +1,6 @@
-
+<?php 
+include "../check-level.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +31,17 @@
             <div>
                 <select name="administration-level" id="status">
 
-                <option value="Administrat">Administrat</option>
-                <option value="standard">standard</option>
+                <?php
+                   // include "../server-connect.php";
+                    
+                    $level = $_SESSION["acces_level"];
+
+                    if( $level == "administrat"){
+                        echo "<option value='administrat'>Administrat</option>";
+                        echo " <option value='moderator'>Moderator</option>";
+                    }
+                ?>
+                <option value="standard">Standard</option>
 
                 </select>
             </div>

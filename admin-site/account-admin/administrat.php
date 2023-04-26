@@ -14,15 +14,35 @@
 <body>
     <div class="wrapper-sections">
         <ul class = "wrapper-administrat">
-        <li><a href="../upload/upload-product.php" class = "btn-styling-administration">Products</a></li>
+            <li><a href="../upload/upload-product.php" class = "btn-styling-administration">Products</a></li>
             <li><a href="creat-account.php" class = "btn-styling-administration">Creat account</a></li>
-            <!--<li><a href="">Remove accounnt</a></li>-->
+
+            <?php
+                $level = $_SESSION["acces_level"];
+                if($level == "administrat"){
+                    echo "<li><a href='remove_admin.php' class ='btn-styling-administration'>Remove account</a></li>";
+                }
+            
+            ?>
+           <div class="card-wrapper">
+            <h2>Logged in as:</h2>
+            <?php
+               $name = $_SESSION["username"];
+                $user_level = $_SESSION["acces_level"];
+                
+                echo "<div class ='card-user'>";
+                echo "<h3>$name</h3>";
+                echo "<p>$user_level</p>";
+                echo "</div>";
+
+            ?>
+           </div>
         </ul>
         <div class="card-wrapper">
-            <h2>Admin users</h2>
+            <h2>Admin users:</h2>
             <?php
             include "../server-connect.php";
-            $user = "SELECT * from  account";
+            $user = "SELECT * from  account WHERE account_activit_status = 'true'";
             $result = $con->query($user);
 
             if (mysqli_num_rows($result) > 0) {

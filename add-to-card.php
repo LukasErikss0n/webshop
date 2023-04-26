@@ -68,7 +68,7 @@ if (!empty($_SESSION['cart'])) {
   foreach ($_SESSION['cart'] as $product) {
     echo "<td class = 'td-img'><img src = 'admin-site/uploads/$product[img_url] '  ></td>";
     echo "<td><h2>$product[title]</h2></td>";
-    echo "<td>$product[quantity]</td>";
+    echo "<td><input type = 'number' value = '$product[quantity]'></td>";
     echo "<td>$product[price]</td>";
     echo "<td><a href = 'add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'>remove</a></td>";
     echo "</tr>";   

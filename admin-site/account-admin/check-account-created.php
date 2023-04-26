@@ -5,7 +5,8 @@ include "../check-level.php";
 
 if(isset($_POST['submit'])){
     session_start();
-    if(isset($_SESSION["acces_level"])){
+    $level = $_SESSION["acces_level"];
+    if($level == "administrat" or $level == "moderator"){
         $creat_username = $_POST['creatusername'];
         $creat_password = $_POST['creatpassword'];
         $administration_level = $_POST['administration-level'];
@@ -19,7 +20,7 @@ if(isset($_POST['submit'])){
     
             if (!mysqli_num_rows($result) > 0) {
                 $hash_password = password_hash($creat_password, PASSWORD_DEFAULT);//: string
-                $insert_account = "insert into account (username, user_password, acces_level) values('$creat_username', '$hash_password', '$administration_level')";
+                $insert_account = "insert into account (username, user_password, acces_level, account_activit_status) values('$creat_username', '$hash_password', '$administration_level', 'true')";
                 $append_account = mysqli_query($con, $insert_account);
                 header("location: creat-account.php?error=none");
                 

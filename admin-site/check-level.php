@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-
-if($_SESSION["acces_level"] != "Administrat"){
-    header("location: ../upload/upload-product.php");
+$activ = $_SESSION["activ_status"];
+if($activ != "true"){
+    if($_SESSION["acces_level"] == "standard"){
+        header("location: ../upload/upload-product.php");
+    }
 }

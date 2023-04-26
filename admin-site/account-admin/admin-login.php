@@ -29,6 +29,9 @@
                 else if($_GET["error"] === "notLogdin"){
                     echo "<p class = 'error'>*Pleas login before entering</p>";
                 }
+                else if($_GET["error"] === "notactiv"){
+                    echo "<p class = 'error'>*This account is no longer activ</p>";
+                }
             } 
         ?>
            <input name="submit" type="submit" value="Submit">

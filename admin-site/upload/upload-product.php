@@ -19,13 +19,10 @@ include "../check-if-loggdin.php";
         <div class="options">
             <a href="../gallary-changes/products-uploaded.php" class = "log-out" >Gallary</a>
             <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
-            <?php
-            include "../server-connect.php";
-            $id = $_SESSION["admin_id"];
-            $grab_data = "SELECT acces_level from  account where id = '$id'";
-            $result = $con->query($grab_data);
+            <?php        
+            $level = $_SESSION["acces_level"];
             
-            if(mysqli_fetch_assoc($result)['acces_level'] == "Administrat"){
+            if($level == "administrat" || $level == "moderator" ){
                 echo "<a href='../account-admin/administrat.php' class = 'log-out'>Administration</a>";
             }
             
@@ -60,7 +57,6 @@ include "../check-if-loggdin.php";
                         echo "<p class = 'error'>*The file typ is not allowed</p>";
                     }
                 }
-                $con->close();
             ?>
             </div>
 

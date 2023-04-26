@@ -135,3 +135,11 @@ input[type=submit]:hover{
     background-color: #442dafc9;
     padding: 2px 3px;
 }
+
+.width{
+    width: 21vw;
+}
+
+.remove-form{
+   text-align: center;
+}
