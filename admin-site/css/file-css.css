@@ -149,3 +149,30 @@ input[type=submit]:hover{
     display: flex;
     flex-direction: column;
 }
+
+.wrapper-hero-img{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.hero-width{
+    width: 41vw;
+    height: 27vh;
+}
+
+.hero-file{
+    margin-left: -80px;
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-bottom: 10px;
+}
+
+
+.go-back-hero{
+    height: 5vh;
+    margin-top: 5vh;
+    list-style: none;
+    margin-left: 5vw;
+}

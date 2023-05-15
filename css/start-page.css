@@ -2,7 +2,7 @@
 
 /*Home sida CSS */
 .hero-imgage-home {
-  background-image: url("../hero-image.jpg");
+  /*background-image: url("../hero-image.jpg");*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,8 +32,12 @@
   flex: 100%;
   text-align: center;
   color: white;
-  height: 88%;
+ /* height: 88%;*/
   flex-direction: column;
+  position: absolute;
+  top: 11vh;
+  width: 100vw;
+  height: 100vh;
 }
 .hero-text-home a {
   font-size: 20px;

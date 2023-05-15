@@ -19,7 +19,20 @@
     <script src="js/hamburger.js"></script>
     <main>
       <section>
-        <div class="hero-imgage-home">
+        <div>
+          <?php
+          include "server-connect.php";
+            $grab_data = "SELECT * from heroimg WHERE id = 1";
+            $result = $con->query($grab_data);
+
+            if (mysqli_num_rows($result) > 0) {
+              $obj = mysqli_fetch_assoc($result);
+              $urlName = $obj['hero_img_url'];
+              $fullUrl = "admin-site/uploads/$urlName";
+            }
+        
+          ?>
+          <img class="hero-imgage-home" src="<?php echo $fullUrl ?>" alt="">
           <div class="hero-text-home center-item">
             <h1 class="nextmove-gradient">Nextmove</h1>
             <p>Welcome to where we fullfille dreams</p>
