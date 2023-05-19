@@ -19,8 +19,12 @@
 
             <?php
                 $level = $_SESSION["acces_level"];
-                if($level == "administrat"){
-                    echo "<li><a href='remove-admin-or-update.php' class ='btn-styling-administration'>Remove account</a></li>";
+                if($level == "administrat" or $level == "moderator"){
+                    $name = "Remove / Edit account";
+                    if ($level == "moderator"){
+                        $name = "Edit account";
+                    }
+                    echo "<li><a href='remove-admin-or-update.php' class ='btn-styling-administration'>$name</a></li>";
                     echo "<li><a href='Change-hero-img.php' class ='btn-styling-administration'>Change Hero-img</a></li>";
                 }
             

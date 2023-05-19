@@ -109,9 +109,6 @@ input[type=submit]:hover{
     width: 23vw;
 }
 
-.card-user{
-    width: 21vw;
-}
 
 .card-user h3{
     background-color: #4d90fe;
@@ -167,6 +164,7 @@ input[type=submit]:hover{
     padding-top: 10px;
     padding-left: 80px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 
