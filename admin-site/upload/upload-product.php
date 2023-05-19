@@ -27,6 +27,7 @@ include "../check-if-loggdin.php";
             }
             
             ?>
+            <a href="../../products.php?" class = "log-out">Website</a>
         </div>
         <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj bild</label>

@@ -20,67 +20,109 @@ session_start();
 
 $id = $_GET['id']; 
 
-$getCartProducts = "SELECT id, user_id, file_name, description, title, price, status  from upload Where id = $id ";
+$getCartProducts = "SELECT * from upload Where id = $id and status = 'Active' ";
 $result = $con->query($getCartProducts);
 
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 
 if (mysqli_num_rows($result) > 0) {
-  while ($obj = mysqli_fetch_assoc($result)) {
-    $id = $obj['id'];
-    $img_url = $obj['file_name'];
-    $title = $obj['title'];
-    $dsc = $obj['description'];
-    $price = $obj['price'];
-  
-    if (isset($_SESSION['cart'][$id])) {
-      $_SESSION['cart'][$id]['quantity']++;
-      if(isset($_GET['remove_id']) && $_GET['remove_id'] == $id){
-        unset($_SESSION['cart'][$id]);
-      }
-    }else {
-      $_SESSION['cart'][$id] = [
-        'product_id' => $id,
-        'img_url' => $img_url,
-        'title' => $title,
-        'dsc' => $dsc,
-        'quantity' => 1,
-        'price' => $price,
-       ];
+    while ($obj = mysqli_fetch_assoc($result)) {
+        $id = $obj['id'];
+        $img_url = $obj['file_name'];
+        $title = $obj['title'];
+        $dsc = $obj['description'];
+        $price = $obj['price'];
+
+        if (isset($cart[$id])) {
+            if (isset($_GET['remove_id']) && $_GET['remove_id'] == $id) {
+                unset($cart[$id]);
+            }
+        } else {
+            $cart[$id] = [
+                'product_id' => $id,
+                'img_url' => $img_url,
+                'title' => $title,
+                'dsc' => $dsc,
+                'quantity' => 1,
+                'price' => $price,
+            ];
+        }
     }
-  }
-  
 }
-echo "<a href= 'products.php'>Go back</a>";
+
+if (!empty($_POST['productId']) && !empty($_POST['quantity'])) {
+    $productId = $_POST['productId'];
+    $quantity = $_POST['quantity'];
+
+    if (isset($cart[$productId])) {
+        $cart[$productId]['quantity'] = $quantity;
+    }
+}
+
+$_SESSION['cart'] = $cart;
+
+echo "<a href='products.php'>Go back</a>";
 
 echo "<div class='wrapper-h1'><h1>Shopping Cart</h1></div>";
 
-if (!empty($_SESSION['cart'])) {
-   echo "<table>";
+if (!empty($cart)) {
+    echo "<table>";
     echo "<tr>";
     echo "<th></th>";
     echo "<th>Title</th>";
-    echo "<th>quantity</th>";
-    echo "<th>price</th>";
+    echo "<th>Quantity</th>";
+    echo "<th>Price</th>";
     echo "<th></th>";
     echo "</tr>";
-    echo "<tr>";
+    $totalPrice = 0;
+    foreach ($cart as $product) {
+        echo "<tr>";
+        echo "<td class='td-img'><img src='admin-site/uploads/$product[img_url]'></td>";
+        echo "<td><h2>$product[title]</h2></td>";
+        echo "<td><input type='number' value='$product[quantity]' qty-update-product-id='$product[product_id]' onchange='updateQuantity(this)'></td>";
+        echo "<td>", $product['price'] * $product['quantity'], "</td>";
+        echo "<td><a href='add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'>remove</a></td>";
+        echo "</tr>";
+        $totalPrice += $product['price'] * $product['quantity'];
+    }
+    echo "</table>";
+    echo "<p class='totalprice'>Totalprice: $totalPrice$</p>";
 
-  foreach ($_SESSION['cart'] as $product) {
-    echo "<td class = 'td-img'><img src = 'admin-site/uploads/$product[img_url] '  ></td>";
-    echo "<td><h2>$product[title]</h2></td>";
-    echo "<td><input type = 'number' value = '$product[quantity]'></td>";
-    echo "<td>$product[price]</td>";
-    echo "<td><a href = 'add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'>remove</a></td>";
-    echo "</tr>";   
-  }
-  echo "</table>";
+    //On checkout check if product is activ, if not, error. 
+
 } else {
-  echo "<p class = 'emty'>Your cart is empty.</p>";
+    echo "<p class='empty'>Your cart is empty.</p>";
 }
-
-//header("location: product-spec.php?id=$product_id");
 $con->close();
 ?>
+
+<script>
+function updateQuantity(input) {
+    var productId = input.getAttribute('qty-update-product-id');
+    var quantity = input.value;
+    
+
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '';
+    form.style.display = 'none';
+
+    var productIdInput = document.createElement('input');
+    productIdInput.type = 'hidden';
+    productIdInput.name = 'productId';
+    productIdInput.value = productId;
+    form.appendChild(productIdInput);
+
+    var quantityInput = document.createElement('input');
+    quantityInput.type = 'hidden';
+    quantityInput.name = 'quantity';
+    quantityInput.value = quantity;
+    form.appendChild(quantityInput);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
 </body>
 </html>
 

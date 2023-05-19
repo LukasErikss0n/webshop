@@ -57,3 +57,10 @@ img{
 .emty{
     text-align: center;
 }
+
+.totalprice{
+    float: right;
+    margin-right: 3vw;
+    margin-top: 3vh;
+    font-size: 16px;
+}
