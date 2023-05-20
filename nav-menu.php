@@ -1,3 +1,4 @@
+
 <header class="header">
     <nav class="navbar">
         <a href="index.php" class="nav-logo nextmove-gradient">Nextmove</a>
@@ -12,7 +13,7 @@
              <a href="#" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-             <a href="#" class="nav-link" ><i class="fas fa-shopping-cart"></i></a>
+             <a href="add-to-card.php?id=0" class="nav-link" >Shoping cart</a>
             </li>
         </ul>
         <div class="hamburger">
