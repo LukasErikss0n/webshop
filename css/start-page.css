@@ -32,7 +32,6 @@
   flex: 100%;
   text-align: center;
   color: white;
- /* height: 88%;*/
   flex-direction: column;
   position: absolute;
   top: 11vh;
@@ -54,6 +53,22 @@
   background-color: #fffb0dda;
   color: rgb(255, 255, 255);
   text-decoration: none;
+}
+
+.top-products-wrapper{
+  display: flex;
+  overflow-x: scroll;
+  gap: 18px;
+  justify-content: center;
+}
+
+.top-val{
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: rgb(118 127 160);
 }
 
 

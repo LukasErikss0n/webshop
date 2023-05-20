@@ -32,6 +32,14 @@ if (mysqli_num_rows($result) > 0) {
         $title = $obj['title'];
         $dsc = $obj['description'];
         $price = $obj['price'];
+        $click = $obj['click'];
+
+        $click += 1;
+
+        $updatepopularity = "UPDATE upload SET click = $click  WHERE id = $id ";
+        $appendRemovel = mysqli_query($con, $updatepopularity);
+
+
 
         if (isset($cart[$id])) {
             if (isset($_GET['remove_id']) && $_GET['remove_id'] == $id) {

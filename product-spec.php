@@ -18,10 +18,12 @@
 
     $IdspecOfProduckt = $_GET['id'];
 
-    $getMoreInfo = "SELECT id, user_id, file_name, description, title, price, status  from upload Where id = $IdspecOfProduckt ";
+    
+
+    $getMoreInfo = "SELECT *  from upload Where id = $IdspecOfProduckt and status = 'Active' ";
     $result = $con->query($getMoreInfo);
 
-
+   
     $uppload = [];
     if (mysqli_num_rows($result) > 0) {
         while ($obj = mysqli_fetch_assoc($result)) {
@@ -32,7 +34,7 @@
             $title = $obj['title'];
             $price = $obj['price'];
             $status = $obj['status'];
-
+           
             $uppload = [$fileName => [$dsc, $title, $price, $id, $status]];
 
             foreach ($uppload as $file => [$dsc, $title, $price, $id, $status]) {
@@ -52,6 +54,7 @@
                     echo "</div>";
 
                 }
+                
             
             }
            

@@ -26,6 +26,12 @@ body {
   animation: shine 4s linear infinite;
 }
 
+.img-top-product{
+  width: 200px;
+  height: 200px;
+}
+
+
 
 
 @keyframes shine {
