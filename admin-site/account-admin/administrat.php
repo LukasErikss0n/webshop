@@ -25,7 +25,9 @@
                         $name = "Edit account";
                     }
                     echo "<li><a href='remove-admin-or-update.php' class ='btn-styling-administration'>$name</a></li>";
-                    echo "<li><a href='Change-hero-img.php' class ='btn-styling-administration'>Change Hero-img</a></li>";
+                    if($level == "administrat"){
+                        echo "<li><a href='Change-hero-img.php' class ='btn-styling-administration'>Change Hero-img</a></li>";
+                    }
                 }
             
             ?>
