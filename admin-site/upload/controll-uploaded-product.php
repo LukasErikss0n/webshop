@@ -5,6 +5,7 @@ if (isset($_SESSION["username"])) {
     //går genom information från produkt som laddas upp, om allt funkar skickar den upp produkten till databasen
     if(isset($_POST['submit'])){
         $file = $_FILES['file'];
+        $id = $_SESSION["admin_id"];
 
         $description = $_POST['description'];
         $title = $_POST['title'];

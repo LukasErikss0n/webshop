@@ -41,11 +41,11 @@
 
 .info-side{
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 105%;
+    height: 100vh;
     background-color: #ffffff;
-    margin-top: -55px;
+    margin-top: -11vh;
     justify-content: center;
     align-items: center;
     margin-left: -142;
@@ -111,6 +111,7 @@ button:hover{
     background-color: black;
     width: 6%;
     text-align: center;
+    margin-top: -81vh;
 }
 
 #btn-activ-hidden{
