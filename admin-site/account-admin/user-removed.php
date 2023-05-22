@@ -1,4 +1,6 @@
 <?php
+
+//Ta bort användare genom att sätta kontot till false, alltså oaktivt
 include "../server-connect.php";
 if(isset($_POST['remove-submit'])){
     session_start();
@@ -12,5 +14,4 @@ if(isset($_POST['remove-submit'])){
 
     $con->close();
 
-    //header("location: remove-admin-or-update.php?userDeleted");
 }

@@ -2,6 +2,8 @@
 include "../server-connect.php";
 
 if(isset($_POST['submit'])){
+
+    //tittar genom användar detaljer som försöker logga in som admin
     $input_name = $_POST['username'];
     $input_password = $_POST['password'];
     

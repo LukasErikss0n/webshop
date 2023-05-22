@@ -17,11 +17,13 @@
         </div>
 
         <?php
+
+        //updaterar vald produkt, skickar in gammal information av produkten i inputsen
              $id = $_GET['id'];
              session_start();
              include "../server-connect.php";
              $_SESSION["change-id-product"] = $id ;
-             $grab_data = "SELECT user_id, file_name, description, title, price, status  from  upload where id = '$id'";
+             $grab_data = "SELECT * from  upload where id = '$id'";
              $result = $con->query($grab_data);
 
              if (mysqli_num_rows($result) > 0) {

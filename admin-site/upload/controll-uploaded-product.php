@@ -2,6 +2,7 @@
 include "../server-connect.php";
 session_start();
 if (isset($_SESSION["username"])) {
+    //går genom information från produkt som laddas upp, om allt funkar skickar den upp produkten till databasen
     if(isset($_POST['submit'])){
         $file = $_FILES['file'];
 

@@ -6,11 +6,12 @@ include "../check-level.php";
 if(isset($_POST['submit'])){
     session_start();
     $level = $_SESSION["acces_level"];
+    //Går igenom inputsen som skickades in vid skappande av konto, skickar till databas med hashat lösen om allt går som de ska 
     if($level == "administrat" or $level == "moderator"){
         $creat_username = $_POST['creatusername'];
         $creat_password = $_POST['creatpassword'];
         $administration_level = $_POST['administration-level'];
-        //echo $creat_password;
+    
     
         if($creat_username !== "" && $creat_password !== "") {
             $stmt = $con->prepare("SELECT id, username, user_password from account where username = ?");

@@ -1,4 +1,5 @@
 <?php
+//tittar ny information för admin och om allt stämmer, updatera användare i databas
 
 include "../server-connect.php";
 

@@ -21,14 +21,15 @@ include "../check-if-loggdin.php";
             <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
             <?php        
             $level = $_SESSION["acces_level"];
-            
+            //vissar admin del av hemsidan för högre admins
             if($level == "administrat" || $level == "moderator" ){
                 echo "<a href='../account-admin/administrat.php' class = 'log-out'>Administration</a>";
             }
             
             ?>
-            <a href="../../products.php?" class = "log-out">Website</a>
+            <a href="../../products.php?" target="_blank" class = "log-out">Website</a>
         </div>
+        <!--Form för uppladning av produkt!-->
         <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj bild</label>
             <input type="file" name="file"   class = "ghost">
@@ -47,6 +48,7 @@ include "../check-if-loggdin.php";
                 <option value="Active">Active</option>
             </select>
             <?php
+            //felhantering av olika fel vid uppladning
                 if(isset($_GET["error"])) {
                     if($_GET["error"] === "fileToBig"){
                     echo "<p class = 'error'>*The file is to big</p>";

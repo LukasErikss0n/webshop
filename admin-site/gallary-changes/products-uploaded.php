@@ -22,7 +22,7 @@ include "../check-if-loggdin.php";
             <div class="styling-form">
             <?php
             include "../server-connect.php";
-
+            //vissar upp alla producter som finns, ligger i ett form för att kunna ändra status på products samt ta bort produkter
             if (isset($_SESSION["admin_id"])) {
                 $sesion = $_SESSION["admin_id"]; 
                 $grab_data = "SELECT id, user_id, file_name, description, title, price, status  from upload ";
@@ -43,6 +43,7 @@ include "../check-if-loggdin.php";
 
                     foreach ($uppload as $file => [$dsc, $title, $price, $id, $status]) {
                         echo "<div class = 'card-wrapper' >";
+                        //skapar checkbox för att updatera status eller ta bort produkter
                         echo "<input type='checkbox' name='del-status[]' class='checkbox' value='$id'>";
                         echo "<p class = '$status status'>$status</p>";
                         echo "<img src = '../uploads/$file' alt = '$title' class = 'img-start-side'>";
@@ -75,6 +76,7 @@ include "../check-if-loggdin.php";
         $con->close();
         ?>
             </div>
+            <!--knapar för att ta bort/ändra status, sen finns gömda knappar som vissas för att verifiera ändring!-->
             <div class="placment-btn">
                 <a id='btn' class="btn">Delet</a>
                 <a id='btn-status' class="btn" >Change status</a>

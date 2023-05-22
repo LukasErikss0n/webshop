@@ -19,6 +19,7 @@ if($_SESSION["acces_level"] != "administrat"){
     ?>
 </head>
 <body>
+        <!-- Ändra hero img på WEPSHOPs sidan!-->
     <li class ="go-back-hero"><a href="administrat.php" class = "btn-styling-administration">Go back</a></li>  
     <div class="wrapper-hero-img">
         <div class="card-wrapper hero-width">

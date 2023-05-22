@@ -11,7 +11,7 @@ if($_SESSION["acces_level"] != "administrat" and $_SESSION["acces_level"] != "mo
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove admin</title>
+    <title>Remove admin/Edit</title>
     <link rel="stylesheet" href="../css/file-css.css">
     <?php
         include "../favicon.php";
@@ -23,12 +23,14 @@ if($_SESSION["acces_level"] != "administrat" and $_SESSION["acces_level"] != "mo
             <li><a href="administrat.php" class = "btn-styling-administration">Go back</a></li>  
             
             <?php
+            //Ta bort användare om man är administrat.
              $level = $_SESSION["acces_level"];
              if($level == "administrat"){
                 include "delet-user-php.php";
              }
             ?>
             <div class="card-wrapper">
+                <!--Updatera användare!-->
                 <h2>Update user:</h2>
                 <form action="update-user.php" class="remove-form update-form" method="post" enctype="multipart/form-data">
                     <select name="id" id="status">
@@ -77,6 +79,7 @@ if($_SESSION["acces_level"] != "administrat" and $_SESSION["acces_level"] != "mo
             </div>
         </ul>
         <div class="card-wrapper width">
+            <!--Kan se alla admins !-->
             <h2>Admin users:</h2>
             <?php
             include "../server-connect.php";

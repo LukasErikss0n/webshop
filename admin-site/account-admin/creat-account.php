@@ -20,7 +20,8 @@ include "../check-level.php";
      <a href="administrat.php" class="log-out">Go-back</a>
     </div>
 <div class="wrapper">
-        <h1>Sign up</h1>
+        <h1>Creat account</h1>
+        <!--Skapar konto till en annan admin!-->
         <form action="check-account-created.php" method="POST" enctype="multipart/form-data">
             <label for="creatusername">User name</label>
             <input type="text" name="creatusername" >
@@ -32,12 +33,14 @@ include "../check-level.php";
                 <select name="administration-level" id="status">
 
                 <?php
-                   // include "../server-connect.php";
                     
                     $level = $_SESSION["acces_level"];
-
+                    //olika värden på admin level som man kan välja, för olika leval av admins som skapar konto, 
+                    //vill inte att en admin ska kunna skapa konto med för höga levels till sig själv
                     if( $level == "administrat"){
                         echo "<option value='administrat'>Administrat</option>";
+                        echo " <option value='moderator'>Moderator</option>";
+                    }elseif($level == "moderator"){
                         echo " <option value='moderator'>Moderator</option>";
                     }
                 ?>

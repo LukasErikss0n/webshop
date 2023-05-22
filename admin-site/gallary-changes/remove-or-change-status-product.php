@@ -5,7 +5,7 @@ include "../server-connect.php";
 
 
 if(isset($_POST['confirmed-del'])){
-
+//Tar bort produkt som är i klickade
     $checkboxes = $_POST['del-status'];
     if($checkboxes == Null){
         header("location: products-uploaded.php?error=nonchoosen");
@@ -28,9 +28,11 @@ if(isset($_POST['confirmed-del'])){
         header("location: products-uploaded.php");
     }
 } else if(isset($_POST['abort'])){
+    //avbryter om ändring inte verifieras
     header("location: products-uploaded.php");
 
 }else if(isset($_POST['active'])){
+    //ändrar till aktiv status
     $checkboxes = $_POST['del-status'];
     if($checkboxes == Null){
         header("location: products-uploaded.php?error=nonchoosen");
@@ -49,6 +51,7 @@ if(isset($_POST['confirmed-del'])){
 
     
 }else if(isset($_POST['hidden'])){
+    //ändrar status till hidden
     $checkboxes = $_POST['del-status'];
     if($checkboxes == Null){
         header("location: products-uploaded.php?error=nonchoosen");
@@ -68,4 +71,3 @@ $con->close();
     
 
   
-   // header("location: upload.php");

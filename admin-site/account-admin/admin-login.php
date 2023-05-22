@@ -12,6 +12,7 @@
     ?>
 </head>
 <body>
+    <!-- Logga in som admin!-->
     <div class="wrapper">
         <h1>Sign in</h1>
         <form action="check-account.php" method="POST" enctype="multipart/form-data">

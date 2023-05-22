@@ -3,6 +3,8 @@
 include "../server-connect.php";
 
 if(isset($_POST['submit-img'])){
+
+    //Tittar så att allt stämmer med bilden som ska bli den nya hero imgen på hemsidan
     session_start();
     $level = $_SESSION["acces_level"];
     if($level == "administrat"){
@@ -47,14 +49,3 @@ if(isset($_POST['submit-img'])){
    
 }
 $con->close();
-
-/*
-gör om: 
-*gör så att man kan ha flera bilder i hero-img gallerit
-*kan klicka på en knap "make aktiv" vilket gör att den displayas på hemsidan
-*se vilken som är aktiv över alla bilder
-*kunna ta bort bilder från hero-img gallerit
-
-
-
-*/

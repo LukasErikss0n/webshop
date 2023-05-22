@@ -1,5 +1,6 @@
 <?php
 include "../server-connect.php";
+//Tittar information på ändrad product, uppdaterar producten
 session_start();
 if (isset($_SESSION["username"])) {
     if(isset($_POST['update'])){
@@ -31,7 +32,7 @@ if (isset($_SESSION["username"])) {
                     $idProduct = $_SESSION["change-id-product"];
                     $getOldImgUrl = "SELECT file_name from upload WHERE id = $idProduct";
                     $result = $con->query($getOldImgUrl);
-
+                    //Tar bort gamla bilden från foldern på datorn
                     if (mysqli_num_rows($result) > 0) {
                         while ($obj = mysqli_fetch_assoc($result)) {
 

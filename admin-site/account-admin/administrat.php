@@ -18,6 +18,9 @@
             <li><a href="creat-account.php" class = "btn-styling-administration">Creat account</a></li>
 
             <?php
+
+            //hantering av olika levlar av admin, olika namn på samma sida för förtydligen(har inte samma saker på samma sida)
+            //vissar bara om man är admin eller moderator
                 $level = $_SESSION["acces_level"];
                 if($level == "administrat" or $level == "moderator"){
                     $name = "Remove / Edit account";
@@ -26,12 +29,14 @@
                     }
                     echo "<li><a href='remove-admin-or-update.php' class ='btn-styling-administration'>$name</a></li>";
                     if($level == "administrat"){
-                        echo "<li><a href='Change-hero-img.php' class ='btn-styling-administration'>Change Hero-img</a></li>";
+                        echo "<li><a href='change-hero-img.php' class ='btn-styling-administration'>Change Hero-img</a></li>";
                     }
                 }
             
             ?>
            <div class="card-wrapper">
+
+               <!-- Se vem man är inloggad som-->
             <h2>Logged in as:</h2>
             <?php
                $name = $_SESSION["username"];
@@ -48,6 +53,7 @@
         <div class="card-wrapper">
             <h2>Admin users:</h2>
             <?php
+            //Vissar alla admins som finns 
             include "../server-connect.php";
             $user = "SELECT * from  account WHERE account_activit_status = 'true'";
             $result = $con->query($user);

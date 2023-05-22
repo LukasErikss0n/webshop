@@ -24,7 +24,7 @@ $getCartProducts = "SELECT * from upload Where id = $id and status = 'Active' ";
 $result = $con->query($getCartProducts);
 
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-
+//läger till produkter i en kart om man klickar på add to kart knapp, läger till i en seassion
 if (mysqli_num_rows($result) > 0) {
     while ($obj = mysqli_fetch_assoc($result)) {
         $id = $obj['id'];
@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0) {
         $click = $obj['click'];
 
         $click += 1;
-
+        //uppdaterar produktens populäritet för att kunna vissa dem top 10 produkter på första sida
         $updatepopularity = "UPDATE upload SET click = $click  WHERE id = $id ";
         $appendRemovel = mysqli_query($con, $updatepopularity);
 
@@ -103,7 +103,7 @@ if (!empty($cart)) {
 }
 $con->close();
 ?>
-
+<!--ändrar quantity för produkt onchange()!-->
 <script>
 function updateQuantity(input) {
     var productId = input.getAttribute('qty-update-product-id');
