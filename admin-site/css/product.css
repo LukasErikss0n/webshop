@@ -14,14 +14,6 @@
 }
 
 
-/*.gallary{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20vh;
-    flex-wrap: nowrap;
-    justify-content: center;
-}*/
-
 .card-wrapper img{
     height: 251px; /*80%*/
     width: 251px;
@@ -60,6 +52,8 @@
     flex-direction: column;
     margin-left: 3vw;
     margin-bottom: 13vh;
+    color: #000;
+    align-items: center;
 }
 
 .product-info h2{
@@ -73,15 +67,19 @@ span{
 
 .product-info p{
     font-size: 20px;
+    width: 69%;
+    margin-top: 2vh;
 }
 
-button{   
+button{
     color: black;
     border: none;
     padding: 13px 36px;
     cursor: pointer;
     background-color: #ffffff;
     border: 2px solid;
+    margin-top: 3vh;
+    width: 50%;
 }
 
 #btn{
@@ -99,6 +97,7 @@ button{
 button:hover{
     background-color: #070707;
     color: white;
+    /* margin-top: 3vh; */
 }
 
 .info-card-img{
@@ -163,4 +162,5 @@ button:hover{
     background-color: #ff0000d9;
     padding: 2px 3px;
     text-decoration: none;
+    width: 70%;
 }

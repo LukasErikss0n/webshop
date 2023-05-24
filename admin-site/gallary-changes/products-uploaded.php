@@ -60,10 +60,10 @@ include "../check-if-loggdin.php";
                         echo "<div class = 'product-info' >";
                         echo "<a href = '../gallary-changes/update-product.php?id=$id' class = 'btn-change' value = '$id'>Edit</a>";
                         echo "<h2>$title</h2>";
+                        echo "<p>$dsc</p>";
                         echo "<p> $$price</p>";
-                        echo "<p>Tax included</p>";
 
-                        echo "<button>Add to cart</button>";
+                        echo "<button href = '#'>Add to cart</button>";
                         echo "</div>";
                         echo "</div>"; 
                         echo "</div>";

@@ -10,7 +10,11 @@ if(isset($_POST['remove-submit'])){
 
         $remove = "UPDATE account SET account_activit_status = 'false' WHERE id = $user_remove_id";
         $appendRemovel = mysqli_query($con, $remove);
+        header("location: remove-admin-or-update.php?userDeleted");
+    }else{
+        header("location: remove-admin-or-update.php?errorAdminLevel");
     }
+
 
     $con->close();
 

@@ -27,6 +27,17 @@ if(isset($_POST['submit-img'])){
             if ($fileError === 0) {
                 if ($fileSize < 500000000) { 
 
+                    $getOldImgUrl = "SELECT hero_img_url from heroimg WHERE id = 1 ";
+                    $result = $con->query($getOldImgUrl);
+                    //Tar bort gamla bilden från foldern på datorn
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($obj = mysqli_fetch_assoc($result)) {
+
+                            $imgUrl = $obj['hero_img_url'];
+                            unlink("../uploads/".$imgUrl);                          
+                        }
+                    }
+
                     $fileDestination = '../uploads/' . $fileName;
                     move_uploaded_file($fileTempName, $fileDestination);
 

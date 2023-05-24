@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
     $input_password = $_POST['password'];
     
 
-    $stmt = $con->prepare("SELECT id, username, user_password, acces_level, account_activit_status from account where username = ?");
+    $stmt = $con->prepare("SELECT * from account where username = ?");
     $stmt->bind_param("s", $input_name);
     $stmt->execute();
     $result = $stmt->get_result();

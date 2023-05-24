@@ -1,3 +1,6 @@
+<?php
+include "../check-if-loggdin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,6 @@
 
         //updaterar vald produkt, skickar in gammal information av produkten i inputsen
              $id = $_GET['id'];
-             session_start();
              include "../server-connect.php";
              $_SESSION["change-id-product"] = $id ;
              $grab_data = "SELECT * from  upload where id = '$id'";

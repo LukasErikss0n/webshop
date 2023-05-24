@@ -1,4 +1,5 @@
 <?php 
+include "../check-if-loggdin.php";
 include "../check-level.php";
 ?>
 <!DOCTYPE html>

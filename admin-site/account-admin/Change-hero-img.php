@@ -1,8 +1,9 @@
 <?php
 session_start();
+include "../check-if-loggdin.php";
 
 if($_SESSION["acces_level"] != "administrat"){
-    header("location: ../upload/upload-product.php");
+    header("location: administrat.php");
 }
 ?>
 

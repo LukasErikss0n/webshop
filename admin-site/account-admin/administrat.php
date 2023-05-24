@@ -1,3 +1,6 @@
+<?php
+include "../check-if-loggdin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

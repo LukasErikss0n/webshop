@@ -1,3 +1,7 @@
+<?php
+include "../check-if-loggdin.php";
+?>
+
 <div class="card-wrapper">
     <h2>Delet user:</h2>
     <form action="user-removed.php" class="remove-form" method="post" enctype="multipart/form-data">

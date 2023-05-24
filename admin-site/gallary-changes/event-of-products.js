@@ -42,8 +42,6 @@ delConfirm.addEventListener("click", function(event){
 
 
 function askUser() {
-
-
   const element = document.activeElement;
 
   if(element.classList.contains("btn-confirm")){
