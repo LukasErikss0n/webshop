@@ -58,5 +58,11 @@
              <script src="js/event-of-products.js"></script>
         </div>
     </main>
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+    </script>
 </body>
 </html>

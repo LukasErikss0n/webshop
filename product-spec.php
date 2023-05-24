@@ -66,5 +66,11 @@
     $con->close();
     ?>
 </body>
+<script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      </script>
 </html>
 
