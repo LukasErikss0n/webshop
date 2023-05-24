@@ -1,5 +1,4 @@
 
-
 .card-wrapper{
     
     max-width: 250px;
@@ -55,6 +54,8 @@
     flex-direction: column;
     margin-left: 3vw;
     margin-bottom: 13vh;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .product-info h2{
@@ -68,15 +69,24 @@ span{
 
 .product-info p{
     font-size: 20px;
+    width: 70%;
+    text-align: center;
+    margin: 1vh 0;
 }
 
-button, .btn-add-product{   
+button, .btn-add-product{
     color: black;
     border: none;
     padding: 13px 36px;
     cursor: pointer;
     background-color: #ffffff;
     border: 2px solid;
+    width: 50%;
+    text-align: center;
+    font-size: 19px;
+    margin-top: bo;
+    /* position: unset; */
+    bottom: 0;
 }
 
 button:hover, .btn-add-product:hover {

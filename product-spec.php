@@ -45,8 +45,8 @@
                     echo "<img src = 'admin-site/uploads/$file' alt = '$title' class = 'info-card-img'>";
                     echo "<div class = 'product-info' >";
                     echo "<h2>$title</h2>";
+                    echo "<p>$dsc</p>";
                     echo "<p> $$price</p>";
-                    echo "<p>Tax included</p>";
 
                     echo "<a href ='add-to-card.php?id=$id' class = 'btn-add-product'>Add card</a>";
                     echo "</div>";
