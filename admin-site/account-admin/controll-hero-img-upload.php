@@ -21,7 +21,7 @@ if(isset($_POST['submit-img'])){
         $fileExtensionUpper = explode('.', $fileName);
         $fileActualExtensionLower = strtolower(end($fileExtensionUpper));
 
-        $allowed = array ('jpg', 'png');
+        $allowed = array ('jpg', 'png', "jpeg");
 
         if (in_array($fileActualExtensionLower, $allowed)) {
             if ($fileError === 0) {

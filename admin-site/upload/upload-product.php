@@ -13,21 +13,22 @@ include "../check-if-loggdin.php";
     <?php
     include "../favicon.php";
     ?>
+    <script src="https://kit.fontawesome.com/62db96ebb4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="choose-wrapper">
         <div class="options">
-            <a href="../gallary-changes/products-uploaded.php" class = "log-out" >Gallary</a>
-            <a href="../account-admin/loggout.php" class = "log-out">Log out</a>
+            <a href="../gallary-changes/products-uploaded.php" class = "log-out" >Products <i class="fa-solid fa-boxes-stacked"></i></a>
+            <a href="../account-admin/loggout.php" class = "log-out">Log out <i class="fa-solid fa-right-from-bracket"></i></a>
             <?php        
             $level = $_SESSION["acces_level"];
             //vissar admin del av hemsidan för högre admins
             if($level == "administrat" || $level == "moderator" ){
-                echo "<a href='../account-admin/administrat.php' class = 'log-out'>Administration</a>";
+                echo "<a href='../account-admin/administrat.php' class = 'log-out'>Administration <i class='fa-solid fa-key'></i></a>";
             }
             
             ?>
-            <a href="../../products.php?" target="_blank" class = "log-out">Website</a>
+            <a href="../../products.php?" target="_blank" class = "log-out">Website <i class="fa-brands fa-chrome"></i></a>
         </div>
         <!--Form för uppladning av produkt!-->
         <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">

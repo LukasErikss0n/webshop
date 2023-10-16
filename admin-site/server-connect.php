@@ -5,7 +5,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "myprojeckt";
+$db = "webshop";
 
 $con = new mysqli($servername, $username, $password, $db);
 

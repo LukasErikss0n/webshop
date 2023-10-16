@@ -13,12 +13,13 @@ include "../check-if-loggdin.php";
     include "../favicon.php";
     include "../check-level.php";
     ?>
+    <script src="https://kit.fontawesome.com/62db96ebb4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrapper-sections">
         <ul class = "wrapper-administrat">
-            <li><a href="../upload/upload-product.php" class = "btn-styling-administration">Products</a></li>
-            <li><a href="creat-account.php" class = "btn-styling-administration">Creat account</a></li>
+            <li><a href="../upload/upload-product.php" class = "btn-styling-administration">Home <i class="fa-solid fa-house"></i></i></a></li>
+            <li><a href="creat-account.php" class = "btn-styling-administration">Creat account <i class="fa-solid fa-plus"></i></a></li>
 
             <?php
 
@@ -26,13 +27,13 @@ include "../check-if-loggdin.php";
             //vissar bara om man är admin eller moderator
                 $level = $_SESSION["acces_level"];
                 if($level == "administrat" or $level == "moderator"){
-                    $name = "Remove / Edit account";
+                    $name = "Remove / Edit account <i class='fa-solid fa-pen-to-square'></i>";
                     if ($level == "moderator"){
-                        $name = "Edit account";
+                        $name = "Edit account <i class='fa-solid fa-pen-to-square'></i>";
                     }
                     echo "<li><a href='remove-admin-or-update.php' class ='btn-styling-administration'>$name</a></li>";
                     if($level == "administrat"){
-                        echo "<li><a href='change-hero-img.php' class ='btn-styling-administration'>Change Hero-img</a></li>";
+                        echo "<li><a href='change-hero-img.php' class ='btn-styling-administration'>Change Hero-img <i class='fa-regular fa-image'></i></a></li>";
                     }
                 }
             

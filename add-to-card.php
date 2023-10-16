@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/universel.css">
   <link rel="stylesheet" href="css/cart.css">
   <title>Shopping cart</title>
+  <script src="https://kit.fontawesome.com/62db96ebb4.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <?php
@@ -89,7 +90,7 @@ if (!empty($cart)) {
         echo "<td><h2>$product[title]</h2></td>";
         echo "<td><input type='number' value='$product[quantity]' qty-update-product-id='$product[product_id]' onchange='updateQuantity(this)'></td>";
         echo "<td>", $product['price'] * $product['quantity'], "</td>";
-        echo "<td><a href='add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'>remove</a></td>";
+        echo "<td><a href='add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'> <i class='fa-regular fa-trash-can' style='color: #ff0000;'></i></a></td>";
         echo "</tr>";
         $totalPrice += $product['price'] * $product['quantity'];
     }
