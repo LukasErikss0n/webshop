@@ -34,11 +34,11 @@ include "../check-if-loggdin.php";
         <form action="controll-uploaded-product.php" method="POST" enctype="multipart/form-data" class = "product-form">
             <label for="file" class ="label-file">Välj bild</label>
             <input type="file" name="file"   class = "ghost">
-            <label for="description" class = "label-file">Description</label>
+            <label for="description" class = "label-file">Förklaring</label>
             <input type="text" name = "description" >
             <label for="title" class = "label-file">Title</label>
             <input type="text" name = "title">
-            <label for="price" class = "label-file">Price</label>
+            <label for="price" class = "label-file">Price i kr</label>
             <input type="text" name = "price">
 
 

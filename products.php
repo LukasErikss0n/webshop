@@ -46,7 +46,7 @@
 
                         echo "<div class = 'info-wrapper' >";
                         echo "<p class = 'title' value = '$id'>$title</p>";
-                        echo "<p class = 'price' value = '$id'>$$price</p>";
+                        echo "<p class = 'price' value = '$id'>$price kr</p>";
                         echo "</div>";
                         echo "</div>";
                        }
@@ -58,11 +58,6 @@
              <script src="js/event-of-products.js"></script>
         </div>
     </main>
-    <script>
-        // Disable right-click context menu
-        document.addEventListener('contextmenu', function(e) {
-          e.preventDefault();
-        });
-    </script>
+    
 </body>
 </html>

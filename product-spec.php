@@ -46,7 +46,7 @@
                     echo "<div class = 'product-info' >";
                     echo "<h2>$title</h2>";
                     echo "<p>$dsc</p>";
-                    echo "<p> $$price</p>";
+                    echo "<p> $price kr</p>";
 
                     echo "<a href ='add-to-card.php?id=$id' class = 'btn-add-product'>Add card</a>";
                     echo "</div>";
@@ -66,11 +66,6 @@
     $con->close();
     ?>
 </body>
-<script>
-        // Disable right-click context menu
-        document.addEventListener('contextmenu', function(e) {
-          e.preventDefault();
-        });
-      </script>
+
 </html>
 

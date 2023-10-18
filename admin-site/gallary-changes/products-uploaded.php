@@ -49,7 +49,7 @@ include "../check-if-loggdin.php";
                         echo "<img src = '../uploads/$file' alt = '$title' class = 'img-start-side'>";
                         echo "<div class = 'info-wrapper' >";
                         echo "<p>$title</p>";
-                        echo "<p>$$price</p>";
+                        echo "<p>$price kr</p>";
                         echo "</div>";
                         echo "</div>";
 

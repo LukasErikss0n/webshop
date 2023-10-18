@@ -38,11 +38,15 @@ input[type=submit]:hover{
     text-decoration: none;
     padding: 10px 12px;
     border-radius: 2px;
-    background-color: #6957c0;
+    background-color: #000000;
     color: white;
     margin-top: 5vh;
     margin-left: 30vw;
     text-align: center;
+}
+
+.log-out:hover{
+    background-color: #000000b4;
 }
 
 .options{
@@ -58,9 +62,13 @@ input[type=submit]:hover{
     text-decoration: none;
     padding: 10px 12px;
     border-radius: 2px;
-    background-color: #6957c0;
+    background-color: #000000;
     color: white;
     text-align: center;
+}
+
+.btn-styling-administration:hover{
+    background-color: #000000b9;
 }
 
 .wrapper-administrat{

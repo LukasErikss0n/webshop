@@ -70,32 +70,42 @@ if (!empty($_POST['productId']) && !empty($_POST['quantity'])) {
 
 $_SESSION['cart'] = $cart;
 
+echo "<div class ='btn-back'>";
 echo "<a href='products.php'>Go back</a>";
+echo "</div>";
 
 echo "<div class='wrapper-h1'><h1>Shopping Cart</h1></div>";
 
 if (!empty($cart)) {
     echo "<table>";
-    echo "<tr>";
+    /*echo "<tr>";
     echo "<th></th>";
     echo "<th>Title</th>";
     echo "<th>Quantity</th>";
     echo "<th>Price</th>";
     echo "<th></th>";
-    echo "</tr>";
+    echo "</tr>";*/
     $totalPrice = 0;
     foreach ($cart as $product) {
         echo "<tr>";
         echo "<td class='td-img'><img src='admin-site/uploads/$product[img_url]'></td>";
-        echo "<td><h2>$product[title]</h2></td>";
-        echo "<td><input type='number' value='$product[quantity]' qty-update-product-id='$product[product_id]' onchange='updateQuantity(this)'></td>";
-        echo "<td>", $product['price'] * $product['quantity'], "</td>";
-        echo "<td><a href='add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'> <i class='fa-regular fa-trash-can' style='color: #ff0000;'></i></a></td>";
+        echo "<td><p class='name-product'>$product[title]</p></td>";
+        
+        echo "<td>";
+        echo "<select name='' id='' data-qty-update-product-id='$product[product_id]' onchange='updateQuantity(this)'>";
+        for ($i = 1; $i <= 4; $i++) {
+            $selected = ($i == $product['quantity']) ? 'selected' : '';
+            echo "<option value='$i' $selected>$i</option>";
+        }
+        echo "</select>";
+        echo "</td>";
+        echo "<td><p class='name-product'>" . ($product['price'] * $product['quantity']) . " kr</p></td>";
+        echo "<td><a href='add-to-card.php?id=$product[product_id]&remove_id=$product[product_id]'> <i class='fa-regular fa-trash-can' style='color: #ff0000; font-size: 20px;'></i></a></td>";
         echo "</tr>";
         $totalPrice += $product['price'] * $product['quantity'];
     }
     echo "</table>";
-    echo "<p class='totalprice'>Totalprice: $totalPrice$</p>";
+    echo "<p class='totalprice'>Totalprice: $totalPrice kr</p>";
 
     //On checkout check if product is activ, if not, error. 
 
@@ -107,13 +117,12 @@ $con->close();
 <!--ändrar quantity för produkt onchange()!-->
 <script>
 function updateQuantity(input) {
-    var productId = input.getAttribute('qty-update-product-id');
+    var productId = input.getAttribute('data-qty-update-product-id');
     var quantity = input.value;
-    
 
     var form = document.createElement('form');
     form.method = 'POST';
-    form.action = '';
+    form.action = '';  // You might want to set the correct action URL here
     form.style.display = 'none';
 
     var productIdInput = document.createElement('input');
@@ -133,11 +142,5 @@ function updateQuantity(input) {
 }
 </script>
 </body>
-    <script>
-            // Disable right-click context menu
-            document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            });
-    </script>
 </html>
 

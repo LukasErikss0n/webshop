@@ -64,9 +64,9 @@ input[type=submit]:hover {
 }
 
 .go-back{
-    padding: 7px 15px;
-    border-radius: 9px;
-    background-color: #6957c0;
+    padding: 10px 12px;
+    border-radius: 20px;
+    background-color: #0c0c0c;
     text-decoration: none;
     color: white;
     margin-top: -97vh;
@@ -75,7 +75,7 @@ input[type=submit]:hover {
 
 .go-back:hover{
     cursor: pointer;
-    background-color: #6857c0cc;
+    background-color: #000000b0;
 }
 
 .return-wrapper{
